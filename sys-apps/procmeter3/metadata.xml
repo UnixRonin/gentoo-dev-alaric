@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <herd>desktop-misc</herd>
+  <maintainer>
+    <name>Phil Stracchino</name>
+    <email>phils@caerllewys.net</email>
+  </maintainer>
+  <upstream>
+    <maintainer status="active">
+      <name>Andrew M. Bishop</name>
+      <email>amb@gedanken.demon.co.uk</email>
+    </maintainer>
+    <remote-id type="freshmeat">ProcMeter3</remote-id>
+  </upstream>
+  <longdescription>
+  ProcMeter3 is a fast, flexible, modular system monitor application that can display
+  system stats onscreen using GTK2 or Athena widgets, display stats on a separate
+  LCD device compatible with app-misc/lcdproc, or simply log stats to a file.  Multiple
+  output versions can be built and run together on the same system.  By default, the
+  Athena widgets version (procmeter3-xaw) is built.
+  </longdescription>
+  <use>
+    <flag name='gtk'>Also build the procmeter3-gtk2 binary, which uses GTK+-2.x widgets
+         to display output.</flag>
+    <flag name='lcd'>Also build the procmeter3-lcd binary, which displays output using a
+         small LCD device compatible with LCDproc (requires app-misc/lcdproc).</flag>
+    <flag name='log'>Also build the procmeter3-log binary, which writes output to a log
+         file.</flag>
+  </use>
+</pkgmetadata>

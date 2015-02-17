@@ -1,0 +1,247 @@
+##
+## The information about the library of modules.
+##
+
+[library]
+
+# The location of the modules
+path=/usr/lib/ProcMeter3/modules
+
+##
+## The outputs to start (formatted as <module>.<output>[-g|-t|-b])
+## Run 'procmeter3 --help' to get a full list of available modules.
+##
+
+[startup]
+
+order = Date_Time.Time_HMS_TZ \
+	Date_Time.Date_DMY \
+	Date_Time.Uptime_DHM-t \
+	Date_Time.Uptime_DHM-t \
+	Stat-CPU.CPU-g \
+	Stat-CPU.CPU_System-g \
+	Stat-CPU.CPU_User-g \
+	Processes.Load-t \
+	Processes.Load-g \
+	Processes.Processes-t \
+	Processes.Processes-g \
+	Memory.Mem_Free-g \
+	Memory.Mem_Free-t \
+	Memory.Mem_Buff-g \
+	Memory.Mem_Buff-t \
+	Memory.Mem_Used-g \
+	Memory.Mem_Used-t \
+	Memory.Swap_Used-g \
+	Memory.Swap_Used-t \
+	Statistics.Swap-g \
+	Network.Pkt_Tx_eth0-g \
+	Network.Pkt_Tx_eth0-t \
+	Network.Byte_Tx_eth0-t \
+	Network.Byte_Tx_eth0-g \
+	Network.Pkt_Rx_eth0-g \
+	Network.Pkt_Rx_eth0-t \
+	Network.Byte_Rx_eth0-t \
+	Network.Byte_Rx_eth0-g \
+	DiskUsage.DF_Free_/-t \
+	DiskUsage.DF_Used_/-t
+
+##
+## The global default resources, mainly X-Windows resources
+##
+
+[resources]
+
+# The outputs, black on white
+foreground = red
+background = black
+
+# The text output, a large-medium size font.
+text-font = 7x13
+
+# The graph output, a solid graph with at least 5 grid lines in grey.
+graph-solid = yes
+grid-min = 5
+grid-foreground = grey70
+
+# The labels on the graphs, black on white in a small size font below the data.
+label-font = 5x7
+label-foreground = grey90
+label-position = bottom
+
+# The menu items, black on white in a small-medium size font.
+menu-foreground = black
+menu-background = white
+menu-font = 7x13
+
+##
+## The resources for the ProcMeter Version output.
+##
+
+[ProcMeter.Version]
+
+# A smaller font than normal with no label.
+text-font = 6x10
+label-position = none
+foreground = yellow
+
+# More information about procmeter3
+run = XTerm(procmeter3 -h | less)
+#run = xterm -e sh -c 'procmeter3 -h | less'
+
+##
+## The resources for the 'Statistics' module.
+##
+
+[Statistics]
+
+# The minimum number of grid lines, they are 20% each.
+grid-min = 5
+foreground = yellow
+
+##
+## The resources for the 'Processes' module.
+##
+
+[Statistics.Swap]
+grid-min = 1
+foreground = yellow
+
+[Stat-CPU]
+grid-min = 5
+foreground = yellow
+
+
+[Processes]
+
+# A more detailed look at the processes.
+run = XTerm(top)
+#run = xterm -e top
+
+[Processes.Load]
+text-font = 8x13B
+grid-min = 1
+
+[Processes.Processes]
+text-font = 8x13B
+graph-scale = 40
+
+##
+## The resources for the 'Memory' module.
+##
+
+[Memory]
+
+# More information about memory usage.
+run = XTermWait(free)
+#run = xterm -e sh -c 'free ; echo "Press return to continue" ; read x'
+
+foreground = cyan
+text-font = 6x10
+
+[Memory.Mem_Used]
+graph-scale = 64
+grid-min = 1
+
+[Memory.Mem_Free]
+graph-scale = 64
+grid-min = 1
+
+[Memory.Mem_Buff]
+graph-scale = 64
+grid-min = 1
+
+[Memory.Swap_Used]
+graph-scale = 64
+grid-min = 1
+
+##
+## The resources for the 'Date and Time' module
+##
+
+[Date_Time]
+
+# No label for these since they are obvious
+text-font = 8x13B
+label-position = none
+foreground = cyan
+
+# A different clock.
+run = Shell(xclock)
+
+[Date_Time.Uptime_DHM]
+
+# This one needs a label because otherwise it is not obvious.
+label-position = top
+foreground = yellow
+
+##
+## The resources for the 'Network' module
+##
+
+[Network]
+
+# To pick up extra devices not automatically recognised.
+#options=ppp0 slip0
+
+# Information about the network devices
+run = XTermWait(ifconfig -a)
+#run = xterm -e sh -c 'ifconfig -a ; echo "Press return to continue" ; read x'
+
+foreground=green
+text-font = 6x10
+grid-min = 1
+
+[Network.Byte_Tx_ppp0]
+#graph-scale = 1
+
+[Network.Byte_Rx_ppp0]
+#graph-scale = 1
+
+[Network.Byte_Tx_eth0]
+#graph-scale = 1
+
+[Network.Byte_Rx_eth0]
+#graph-scale = 1
+
+##
+## The resources for the 'DiskUsage' module
+##
+
+[DiskUsage]
+
+# Information about the disks
+options=
+run = XTermWait(df)
+foreground = yellow
+#text-font=7x13
+text-font = 6x10
+label-position = top
+# run = xterm -e sh -c 'df ; echo "Press return to continue" ; read x'
+
+
+##
+## The resources for the 'LogFile' module
+##
+
+[LogFile]
+
+# Files to monitor
+#options=/var/adm/messages /var/log/syslog
+options=/var/log/mail.log
+
+##
+## Example resources for the 'Temperature' module (requires lm-sensors)
+##
+
+[Temperature]
+label-position = top
+text-font = 6x10
+[Temperature.temp2]
+label = CPU Temperature
+[Temperature.temp1]
+label = HDD1 Temperature
+[Temperature.temp4]
+label = HDD2 Temperature
+[Temperature.temp3]
+label = GPU Temperature
+

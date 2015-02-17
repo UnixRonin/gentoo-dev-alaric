@@ -1,0 +1,29 @@
+--- Makefile.orig	2011-05-21 14:12:31.000000000 -0400
++++ Makefile	2011-10-04 08:42:47.791692775 -0400
+@@ -12,23 +12,23 @@
+ #
+ 
+ # Paths
+ 
+ # INSTDIR - the default root directory for the package
+-INSTDIR=/usr/local
++INSTDIR=/usr
+ 
+ # MANDIR - the directory to install man pages to
+ MANDIR=$(INSTDIR)/share/man
+ 
+ # LIB_PATH - the root dir for library files
+-LIB_PATH=$(INSTDIR)/lib/X11/ProcMeter3
++LIB_PATH=$(INSTDIR)/lib/ProcMeter3
+ 
+ # MOD_PATH - the path modules are stored in
+ MOD_PATH=$(LIB_PATH)/modules
+ 
+ # RC_PATH - file the procmeterrc is stored in
+-RC_PATH=$(LIB_PATH)
++RC_PATH=/etc
+ 
+ # Programs
+ 
+ CC=gcc
+ LD=gcc
