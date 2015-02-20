@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <herd>desktop-misc</herd>
+  <maintainer>
+    <name>Phil Stracchino</name>
+    <email>phils@caerllewys.net</email>
+  </maintainer>
+  <longdescription>
+  ICBM is a feature-rich, multithreaded Perl ICB client using a minimalistic Curses
+  interface.  It extends the usual icb feature set to add irc-style /queries, and
+  optionally supports client-to-client encryption if the required supporting modules
+  are installed.  It requires Perl built with ithreads support.
+  </longdescription>
+  <use>
+    <flag name='encryption'>Install the prerequisites for encryption support if not
+        already present.</flag>
+  </use>
+</pkgmetadata>

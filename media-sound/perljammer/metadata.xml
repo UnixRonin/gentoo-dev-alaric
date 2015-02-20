@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <herd>desktop-misc</herd>
+  <maintainer>
+    <name>Phil Stracchino</name>
+    <email>phils@caerllewys.net</email>
+  </maintainer>
+  <longdescription>
+  PerlJammer is a network-controllable MP3 jukebox using a Perl/Tk interface,
+  backed by a SQL database and designed to be used with a shared music library.
+  It generates random playlists on demand, plays using a user-selected external
+  MP3 player app (default: media-sound/madplay), supports individual exclusion
+  lists for up to 256 different users and per-track gain control, allows
+  drag-and-drop resorting of the playlist, and allows interactively linking
+  songs to always be selected as a group.  It includes a network mini-remote
+  with several interface options, including vertical and horizontal toolbars
+  and a skinnable virtual remote.  A variety of helper tools are also included.
+  </longdescription>
+</pkgmetadata>

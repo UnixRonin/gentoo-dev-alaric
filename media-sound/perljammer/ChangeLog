@@ -1,0 +1,11 @@
+# ChangeLog for media-sound/perljammer
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*perljammer-1.8.1-r1 (17 FEB 2015)
+  17 FEB 2015; Phil Stracchino <phils@caerllewys.net>:
+  Fixed a bug in RemoteJammer's skin selection logic.
+
+*perljammer-1.8.1 (17 FEB 2015)
+  17 FEB 2015; Phil Stracchino <phils@caerllewys.net>:
+  Initial overlay creation.  Ebuild submitted by Phil Stracchino <phils@caerllewys.net>

@@ -1,0 +1,10 @@
+# ChangeLog for net-misc/icbm
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  17 FEB 2015; Phil Stracchino <phils@caerllewys.net> icbm-1.4.8.3.ebuild:
+  Fix incorrect current nick reported at the remote cend by /revoke
+
+*icbm-1.4.8.2 (17 FEB 2015)
+  17 FEB 2015; Phil Stracchino <phils@caerllewys.net>:
+  Initial overlay creation.  Ebuild submitted by Phil Stracchino <phils@caerllewys.net>
