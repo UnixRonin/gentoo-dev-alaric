@@ -2,6 +2,11 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*perljammer-1.8.2 (21 APR 2015)
+  21 APR 2015; Phil Stracchino <phils@caerllewys.net>:
+  Fixed several missing -font specifications on text buttons after the default font
+  suddenly stopped working for no obvious reason.
+
 *perljammer-1.8.1-r1 (17 FEB 2015)
   17 FEB 2015; Phil Stracchino <phils@caerllewys.net>:
   Fixed a bug in RemoteJammer's skin selection logic.
