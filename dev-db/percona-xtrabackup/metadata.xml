@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
-		<email>phils@caerllewys.net</email>
-		<name>Phil Stracchino</name>
-	</maintainer>
+  <use>
+    <flag name='tests'>Enable installation of the test suite</flag>
+  </use>
+  <maintainer>
+    <email>phils@caerllewys.net</email>
+    <name>Phil Stracchino</name>
+  </maintainer>
 </pkgmetadata>
