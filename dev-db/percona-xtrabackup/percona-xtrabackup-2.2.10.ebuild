@@ -6,14 +6,14 @@ EAPI=5
 
 inherit eutils
 
-DESCRIPTION="Fast binary backup software for MySQL and compatible databases including MariaDB and Percona Server"
+DESCRIPTION="Fast binary backup software for MySQL and MySQL-based databases"
 HOMEPAGE="http://www.percona.com/software/percona-xtrabackup"
 SRC_URI="http://www.percona.com/downloads/XtraBackup/Percona-XtraBackup-${PV}/source/tarball/${PN}-${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 x86"
-IUSE=""
+IUSE="tests"
 
 DEPEND=""
 RDEPEND="dev-libs/libaio
@@ -23,5 +23,10 @@ RDEPEND="dev-libs/libaio
 	sys-libs/zlib"
 
 src_configure() {
-	cmake -DBUILD_CONFIG=xtrabackup_release
+	if use tests ; then
+		cmake -DBUILD_CONFIG=xtrabackup_release -DINSTALL_LAYOUT=RPM
+	else
+		cmake -DBUILD_CONFIG=xtrabackup_release -DINSTALL_LAYOUT=RPM -DINSTALL_MYSQLTESTDIR=0
+        fi
 }
+
