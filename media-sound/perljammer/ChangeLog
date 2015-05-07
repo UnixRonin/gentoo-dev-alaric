@@ -2,6 +2,11 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*perljammer-1.8.3 (07 MAY 2015)
+  07 MAY 2015; Phil Stracchino <phils@caerllewys.net>:
+  Fixed errorfont and allowed errorfont to be set from the config file, defaulting
+  to boldfont if not set
+
 *perljammer-1.8.2 (21 APR 2015)
   21 APR 2015; Phil Stracchino <phils@caerllewys.net>:
   Fixed several missing -font specifications on text buttons after the default font
