@@ -2,8 +2,11 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 JUL 2015; Phil Stracchino <phils@caerllewys.net> icbm-1.4.8.4.ebuild:
+  Fix several potential pointer overruns in talk()
+
   17 FEB 2015; Phil Stracchino <phils@caerllewys.net> icbm-1.4.8.3.ebuild:
-  Fix incorrect current nick reported at the remote cend by /revoke
+  Fix incorrect current nick reported at the remote end by /revoke
 
 *icbm-1.4.8.2 (17 FEB 2015)
   17 FEB 2015; Phil Stracchino <phils@caerllewys.net>:
