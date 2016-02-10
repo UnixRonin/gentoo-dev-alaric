@@ -1,11 +1,6 @@
-Common subdirectories: xcoral-3.47/Doc and xcoral-3.47-r1/Doc
-Common subdirectories: xcoral-3.47/Rpm and xcoral-3.47-r1/Rpm
-Common subdirectories: xcoral-3.47/Smac and xcoral-3.47-r1/Smac
-Common subdirectories: xcoral-3.47/SmacLib and xcoral-3.47-r1/SmacLib
-diff -U5 -Bb xcoral-3.47/get_file.c xcoral-3.47-r1/get_file.c
---- xcoral-3.47/get_file.c	2000-04-12 15:37:22.000000000 -0400
-+++ xcoral-3.47-r1/get_file.c	2015-02-18 10:51:30.009123690 -0500
-@@ -1058,18 +1058,30 @@
+--- get_file.c	2016-02-10 12:02:45.494226182 -0500
++++ get_file.c	2016-02-10 12:05:34.731318670 -0500
+@@ -1058,18 +1058,31 @@
  */
  void SetWindowName ( text )
      Text *text;
@@ -13,7 +8,7 @@ diff -U5 -Bb xcoral-3.47/get_file.c xcoral-3.47-r1/get_file.c
      char *icon_name;
 +    char hostname[MAXHOSTNAMELEN + 1];
 +    char windowtitle [MAXPATHLEN + MAXHOSTNAMELEN + 2];
-
+     
 -    icon_name = strrchr ( text -> filename, '/' );
 +    gethostname(hostname, sizeof hostname);
 +    hostname[MAXHOSTNAMELEN] = 0; /* make good and certain the hostname is null-terminated */
@@ -41,8 +36,8 @@ diff -U5 -Bb xcoral-3.47/get_file.c xcoral-3.47-r1/get_file.c
  **	Function name : update_cwd
  **
 diff -U5 -Bb xcoral-3.47/macros.c xcoral-3.47-r1/macros.c
---- xcoral-3.47/macros.c	1998-09-20 12:16:05.000000000 -0400
-+++ xcoral-3.47-r1/macros.c	2015-02-18 10:51:30.010123656 -0500
+--- macros.c	1998-09-20 12:16:05.000000000 -0400
++++ macros.c	2015-02-18 10:51:30.010123656 -0500
 @@ -48,10 +48,12 @@
  #  if HAVE_MALLOC_H
  #    include <malloc.h>
