@@ -11,26 +11,27 @@ diff -U5 -Bb xcoral-3.47/get_file.c xcoral-3.47-r1/get_file.c
      Text *text;
  {
      char *icon_name;
-+    char hostname[64];
-+    char windowtitle [MAXPATHLEN + 66];
-     
++    char hostname[MAXHOSTNAMELEN + 1];
++    char windowtitle [MAXPATHLEN + MAXHOSTNAMELEN + 2];
+
 -    icon_name = strrchr ( text -> filename, '/' );
 +    gethostname(hostname, sizeof hostname);
-+    hostname[63] = 0; /* make good and certain the hostname is numm-terminated */
++    hostname[MAXHOSTNAMELEN] = 0; /* make good and certain the hostname is null-terminated */
 +
 +    snprintf(windowtitle,
-+	     MAXPATHLEN + 66,
-+	     "%s:%s",
-+	     hostname,
-+	     text -> filename);
-+    
++            MAXPATHLEN + MAXHOSTNAMELEN + 1,
++            "%s:%s",
++            hostname,
++            text -> filename);
++    windowtitle[MAXPATHLEN + MAXHOSTNAMELEN + 1] = 0;  /* same as above */
++
 +    icon_name = strrchr ( windowtitle, '/' );
      if ( icon_name )
        icon_name ++;
      else
 -      icon_name = text -> filename;
 +      icon_name = windowtitle;
-+    
++
      XSetIconName ( dpy,  text ->  w_parent, icon_name );
 -    XStoreName ( dpy, text ->  w_parent, text -> filename );
 +    XStoreName ( dpy, text ->  w_parent, windowtitle );
