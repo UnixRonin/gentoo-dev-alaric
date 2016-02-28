@@ -24,7 +24,7 @@ HOMEPAGE="http://www.palemoon.org"
 KEYWORDS="~amd64"
 SLOT="0"
 LICENSE="MPL-2.0 GPL-2 LGPL-2.1"
-IUSE="bindist gstreamer +jit +minimal pgo pulseaudio selinux system-cairo system-icu system-jpeg system-sqlite test"
+IUSE="bindist gstreamer +jit +minimal pgo pulseaudio selinux system-cairo system-icu system-jpeg system-sqlite test webm"
 
 SRC_URI="${SRC_URI} ftp://source:get@ftp.palemoon.org/${P}-source.7z"
 

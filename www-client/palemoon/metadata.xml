@@ -18,5 +18,6 @@
 		Use system jpeg instead of bundled.</flag>
 	<flag name="system-sqlite">Use the system-wide <pkg>dev-db/sqlite</pkg>
 		installation with secure-delete enabled</flag>
+	<flag name="webm">Enable support for the WebM video format</flag>
 </use>
 </pkgmetadata>
