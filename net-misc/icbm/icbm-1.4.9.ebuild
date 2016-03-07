@@ -21,10 +21,10 @@ RDEPEND="
 	dev-perl/Net-ICB
 	dev-perl/TermReadKey
 	encryption? (
-		dev-perl/Math-BigInt-GMP
+		( || ( dev-perl/Math-BigInt-GMP dev-perl/Math-BigInt ) )
+		( || ( dev-perl/Crypt-DH-GMP dev-perl/Crypt-DH ) )
 		dev-perl/Crypt-Blowfish
 		dev-perl/Crypt-CBC
-		dev-perl/Crypt-DH
 		dev-perl/Crypt-Primes
 		dev-perl/Crypt-Random
 		dev-perl/math-pari
