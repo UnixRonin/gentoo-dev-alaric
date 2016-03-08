@@ -13,7 +13,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~sparc"
 IUSE="encryption"
-
+RESTRICT="mirror"
 
 RDEPEND="
 	>=dev-lang/perl-5.6.0[ithreads]

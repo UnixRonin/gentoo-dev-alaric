@@ -2,6 +2,14 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*perljammer-1.8.5-r1 (08 MAR 2016)
+  08 MAR 2016; Phil Stracchino <phils@caerllewys.net>:
+  Restrict mirrors.
+
+*perljammer-1.8.4 (01 SEP 2015)
+  01 SEP 2015; Phil Stracchino <phils@caerllewys.net>:
+  Fix all of the UTF8 handling issues.
+
 *perljammer-1.8.3 (07 MAY 2015)
   07 MAY 2015; Phil Stracchino <phils@caerllewys.net>:
   Fixed errorfont and allowed errorfont to be set from the config file, defaulting
