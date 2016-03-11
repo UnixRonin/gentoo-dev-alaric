@@ -2,9 +2,9 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-*perljammer-1.8.5-r1 (08 MAR 2016)
+*perljammer-1.8.5 (08 MAR 2016)
   08 MAR 2016; Phil Stracchino <phils@caerllewys.net>:
-  Restrict mirrors.
+  Restrict mirrors.  Fix UTF8 support.
 
 *perljammer-1.8.4 (01 SEP 2015)
   01 SEP 2015; Phil Stracchino <phils@caerllewys.net>:

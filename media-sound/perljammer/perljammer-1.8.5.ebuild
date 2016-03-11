@@ -12,7 +12,7 @@ SRC_URI="http://co.ordinate.org/perljammer/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~sparc"
-
+RESTRICT="mirror"
 
 # Tk::MListbox needs to go in here somehow
 
