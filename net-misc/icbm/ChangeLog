@@ -2,6 +2,9 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Mar 2016; Phil Stracchino <phils@caerllewys.net> icbm-1.4.9-r1.ebuild:
+  Revise ebuild to reflect name change from dev-perl/math-pari to dev-perl/Math-Pari
+
   07 Mar 2016; Phil Stracchino <phils@caerllewys.net> icbm-1.4.9.ebuild:
   Convert from dev-perl/Crypt-DH to dev-perl/Crypt-DH-GMP
 

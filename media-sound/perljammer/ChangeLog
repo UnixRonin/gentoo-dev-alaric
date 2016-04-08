@@ -2,6 +2,10 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*perljammer-1.8.6 (15 MAR 2016)
+  15 MAR 2016; Phil Stracchino <phils@caerllewys.net>:
+  Track upstream package renames of dependencies (dev/perl/perl-tk to dev-perl/Tk)
+
 *perljammer-1.8.5 (08 MAR 2016)
   08 MAR 2016; Phil Stracchino <phils@caerllewys.net>:
   Restrict mirrors.  Fix UTF8 support.
