@@ -38,7 +38,7 @@ RDEPEND="
 	>=media-libs/mesa-7.10
 	>=media-libs/libpng-1.5.13[apng]
 	virtual/libffi
-	gstreamer? ( >=media-plugins/gst-plugins-meta-1.0:0[ffmpeg] )
+	gstreamer? ( >=media-plugins/gst-plugins-meta-1.0[ffmpeg] )
 	pulseaudio? ( media-sound/pulseaudio )
 	system-cairo? ( >=x11-libs/cairo-1.12[X] )
 	system-icu? ( >=dev-libs/icu-51.1 )
