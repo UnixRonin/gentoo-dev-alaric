@@ -1,0 +1,15 @@
+--- lib/MP3/Tag.pm.orig	2010-07-13 10:10:38.000000000 -0400
++++ lib/MP3/Tag.pm	2016-09-19 21:40:54.349710581 -0400
+@@ -2605,11 +2605,11 @@
+ 
+ sub parse_prepare {
+     my ($self, $pattern) = @_;
+     $pattern = "^\Q$pattern\E\$";
+     # unquote %. and %=. and %={WHATEVER} and %{WHATEVER}
+-    $pattern =~ s<(\\%(?:\\=)?(\w|\\{(?:\w|\\[^\w\\{}]|\\\\\\[\\{}])*\\}|\\\W))>
++    $pattern =~ s<(\\%(?:\\=)?(\w|\\\{(?:\w|\\[^\w\\\{\}]|\\\\\\[\\\{\}])*\\\}|\\\W))>
+ 		 ( __unquote($1) )ge;
+     # $pattern =~ s/(\\%(?:\\=)?)(\w|\\(\W))/$unquote{$1}$+/g;
+     return $self->parse_rex_prepare($pattern);
+ }
+ 
