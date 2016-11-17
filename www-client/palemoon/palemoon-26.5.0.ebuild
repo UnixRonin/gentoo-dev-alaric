@@ -355,6 +355,12 @@ pkg_postinst() {
 	# Update mimedb for the new .desktop file
 	fdo-mime_desktop_database_update
 	gnome2_icon_cache_update
+
+        # Temporary fix for libmozalloc/libxul.  I know this is an awful hack,
+        # but until I understand the problem better...
+        pushd /usr/lib64/${P}
+        ln -f libxul.so libmozalloc.so libmozsqlite3.so /usr/lib64/
+        popd
 }
 
 pkg_postrm() {
