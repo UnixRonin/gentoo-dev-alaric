@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <herd>desktop-misc</herd>
+  <maintainer>
+    <name>Phil Stracchino</name>
+    <email>phils@caerllewys.net</email>
+  </maintainer>
+  <longdescription>
+  A tool to migrate GnuPG profiles.
+  </longdescription>
+  <use>
+  </use>
+</pkgmetadata>

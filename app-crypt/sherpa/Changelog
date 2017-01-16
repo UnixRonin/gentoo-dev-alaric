@@ -1,0 +1,6 @@
+# ChangeLog for app-crypt/sherpa
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  16 Jan 2017; Phil Stracchino <phils@caerllewys.net> sherpa-0.3.0.ebuikd
+  Initial commit of Robert J. Hansen's Sherpa GnuPG profile migration tool
