@@ -9,7 +9,7 @@ DESCRIPTION="A simple migration tool for GnuPG profiles"
 HOMEPAGE="https://rjhansen.github.io/sherpa/"
 EGIT_REPO_URI="https://github.com/rjhansen/sherpa.git"
 
-LICENSE="GPL-2"
+LICENSE="ISC"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
