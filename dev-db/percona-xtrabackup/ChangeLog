@@ -1,7 +1,0 @@
-# ChangeLog for dev-db/percona-xtrabackup
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-*percona-xtrabackup-2.2.10 (1 MAY 2015)
-  1 MAY 2015; Phil Stracchino <phils@caerllewys.net>:
-  Initial package creation.  Ebuild submitted by Phil Stracchino <phils@caerllewys.net>
