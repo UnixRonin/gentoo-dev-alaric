@@ -4,7 +4,7 @@
 #
 # mozconfig.eclass: the new mozilla.eclass
 
-inherit multilib flag-o-matic mozcoreconf-2
+inherit multilib flag-o-matic mozcoreconf-v4
 
 # use-flags common among all mozilla ebuilds
 IUSE="+alsa +dbus debug libnotify startup-notification system-sqlite wifi"

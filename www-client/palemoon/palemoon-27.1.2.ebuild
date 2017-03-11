@@ -13,10 +13,10 @@ ru si sk sl son sq sr sv-SE ta ta-LK te th tr uk vi zh-CN zh-TW zu )
 
 MOZ_LANGPACK_PREFIX="langpacks/24.x/"
 
-# Upstream release URI that's used by mozlinguas.eclass
+# Upstream release URI that's used by mozlinguas-v2.eclass
 MOZ_FTP_URI="http://relmirror.palemoon.org"
 
-inherit check-reqs flag-o-matic toolchain-funcs eutils gnome2-utils mozconfig-3 multilib pax-utils fdo-mime autotools virtualx mozlinguas
+inherit check-reqs flag-o-matic toolchain-funcs eutils gnome2-utils mozconfig-3 multilib pax-utils fdo-mime autotools virtualx mozlinguas-v2
 
 DESCRIPTION="Pale Moon Web Browser"
 HOMEPAGE="http://www.palemoon.org"
@@ -26,7 +26,7 @@ SLOT="0"
 LICENSE="MPL-2.0 GPL-2 LGPL-2.1"
 IUSE="bindist gstreamer +jit +minimal pgo pulseaudio selinux system-cairo system-icu system-jpeg system-sqlite test webm"
 
-SRC_URI="${SRC_URI} ftp://source:get@ftp.palemoon.org/${P}-source.7z"
+SRC_URI="${SRC_URI} ftp://source:current@ftp2.palemoon.org/${P}-source.7z"
 
 ASM_DEPEND=">=dev-lang/yasm-1.1"
 
@@ -38,7 +38,7 @@ RDEPEND="
 	>=media-libs/mesa-7.10
 	>=media-libs/libpng-1.5.13[apng]
 	virtual/libffi
-	gstreamer? ( media-plugins/gst-plugins-meta:0.10[ffmpeg] )
+	gstreamer? ( >=media-plugins/gst-plugins-meta-1.0[ffmpeg] )
 	pulseaudio? ( media-sound/pulseaudio )
 	system-cairo? ( >=x11-libs/cairo-1.12[X] )
 	system-icu? ( >=dev-libs/icu-51.1 )
@@ -108,7 +108,7 @@ src_unpack() {
 	chmod -R +x $(find ./ -name autoconf)
 
 	# Unpack language packs
-	mozlinguas_src_unpack
+	mozlinguas-v2_src_unpack
 }
 
 src_prepare() {
@@ -130,7 +130,6 @@ src_prepare() {
 	# Fix sandbox violations during make clean, bug 372817
 	sed -e "s:\(/no-such-file\):${T}\1:g" \
 		-i "${S}"/config/rules.mk \
-		-i "${S}"/js/src/config/rules.mk \
 		-i "${S}"/nsprpub/configure{.in,} \
 		|| die
 
@@ -143,6 +142,8 @@ src_prepare() {
 	sed 's@\(xargs rm\)$@\1 -f@' \
 		-i "${S}"/toolkit/mozapps/installer/packager.mk || die
 
+        # Fix permissions on mach script
+        chmod +x "${S}"/mach
 	eautoreconf
 
 	# Must run autoconf in js/src
@@ -248,7 +249,14 @@ src_compile() {
 	else
 		CC="$(tc-getCC)" CXX="$(tc-getCXX)" LD="$(tc-getLD)" \
 		MOZ_MAKE_FLAGS="${MAKEOPTS}" SHELL="${SHELL}" \
-		emake -f client.mk build
+
+        # We do this at the recommendation of the palemoon developers because executable bits on
+        # key scripts in the palemoon source are often not set correctly when extracting the
+        # palemoon source code.
+                chmod -R +x python
+
+        # We have to use mach here Because Mozilla.  Calling emake directly fails.
+                ./mach build
 	fi
 
 }
@@ -290,7 +298,7 @@ src_install() {
 	emake DESTDIR="${D}" install
         
 	# Install language packs
-	mozlinguas_src_install
+	mozlinguas-v2_src_install
 
 	local size sizes icon_path icon name
 	if use bindist; then
@@ -355,6 +363,12 @@ pkg_postinst() {
 	# Update mimedb for the new .desktop file
 	fdo-mime_desktop_database_update
 	gnome2_icon_cache_update
+
+        # Temporary fix for libmozalloc/libxul.  I know this is an awful hack,
+        # but until I understand the problem better...
+        pushd /usr/lib64/${P}
+        ln -f libxul.so libmozalloc.so libmozsqlite3.so /usr/lib64/
+        popd
 }
 
 pkg_postrm() {

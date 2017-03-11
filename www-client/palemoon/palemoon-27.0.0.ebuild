@@ -13,10 +13,10 @@ ru si sk sl son sq sr sv-SE ta ta-LK te th tr uk vi zh-CN zh-TW zu )
 
 MOZ_LANGPACK_PREFIX="langpacks/24.x/"
 
-# Upstream release URI that's used by mozlinguas.eclass
+# Upstream release URI that's used by mozlinguas-v2.eclass
 MOZ_FTP_URI="http://relmirror.palemoon.org"
 
-inherit check-reqs flag-o-matic toolchain-funcs eutils gnome2-utils mozconfig-3 multilib pax-utils fdo-mime autotools virtualx mozlinguas
+inherit check-reqs flag-o-matic toolchain-funcs eutils gnome2-utils mozconfig-3 multilib pax-utils fdo-mime autotools virtualx mozlinguas-v2
 
 DESCRIPTION="Pale Moon Web Browser"
 HOMEPAGE="http://www.palemoon.org"
@@ -108,7 +108,7 @@ src_unpack() {
 	chmod -R +x $(find ./ -name autoconf)
 
 	# Unpack language packs
-	mozlinguas_src_unpack
+	mozlinguas-v2_src_unpack
 }
 
 src_prepare() {
@@ -291,7 +291,7 @@ src_install() {
 	emake DESTDIR="${D}" install
         
 	# Install language packs
-	mozlinguas_src_install
+	mozlinguas-v2_src_install
 
 	local size sizes icon_path icon name
 	if use bindist; then
