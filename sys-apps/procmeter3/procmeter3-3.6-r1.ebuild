@@ -6,8 +6,8 @@ EAPI=3
 inherit eutils multilib toolchain-funcs
 
 DESCRIPTION="Fast, flexible, modular system monitoring tool for Unix and the X Window System"
-HOMEPAGE="http://www.gedanken.demon.co.uk/procmeter3/"
-SRC_URI="http://www.gedanken.demon.co.uk/download-procmeter/${P}.tgz"
+HOMEPAGE="https://www.gedanken.org.uk/software/procmeter3/"
+SRC_URI="https://www.gedanken.org.uk/software/procmeter3/download/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
