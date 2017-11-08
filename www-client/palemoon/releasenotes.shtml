@@ -1,0 +1,625 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta name="generator"
+ content="HTML Tidy for Windows (vers 25 March 2009), see www.w3.org">
+  <meta content="text/html; charset=utf-8" http-equiv="content-type">
+  <title>Pale Moon - Release Notes</title>
+<!-- Keep the http-equiv meta tag for IE8 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+  <link rel="stylesheet" type="text/css" media="screen,projection"
+ href="menustyle.css">
+  <link rel="stylesheet" type="text/css" media="screen,projection"
+ href="pagestyle.css">
+  <style type="text/css">
+    td.c9 {vertical-align: top; text-align: center;}
+    td.c8 {vertical-align: top;}
+    span.c7 {color: rgb(102, 102, 0);}
+    span.c6 {color: rgb(0, 64, 128);}
+    span.c5 {text-decoration: underline;}
+    span.c4 {font-weight: bold; color: rgb(153, 0, 0);}
+    span.c3 {color: rgb(51, 102, 102); font-weight: bold;}
+    span.c2 {font-weight: bold;}
+    </style>
+</head>
+<body>
+<table class="maintable" align="center" border="0" cellpadding="0"
+ cellspacing="0">
+  <tbody>
+    <tr>
+      <th class="subpageheader"> <br>
+      </th>
+    </tr>
+    <tr align="left">
+      <td class="pagemenu"><!-- PULL DOWN MENU - BEGIN -->
+<div class="mainmenu">
+<ul>
+  <li class="li_hc"><a href="#" target="_self">Main</a>
+    <ul class="ul_ch">
+      <li class="li_nc"><a href="/" target="_self">Pale Moon homepage</a></li>
+      <li class="li_nc"><a href="https://start.palemoon.org" target="_self">Pale Moon Start page</a></li>
+      <li class="li_nc"><a href="http://www.fossamail.org" target="_self">FossaMail homepage</a></li>
+    </ul>
+  </li>
+  <li class="li_hc"><a href="#" target="_self">Information</a>
+    <ul class="ul_ch">
+      <li class="li_nc"><a href="releasenotes.shtml" target="_self">Release notes</a></li>
+      <li class="li_hc"><a href="#" target="_self">The project ></a>
+        <ul class="ul_ch">
+          <li class="li_nc"><a href="info.shtml" target="_self">General information</a></li>
+          <li class="li_nc"><a href="https://forum.palemoon.org/viewtopic.php?f=4&t=7818" target="_blank">Rumor Control</a></li>
+          <li class="li_nc"><a href="history.shtml" target="_self">Project history</a></li>
+          <li class="li_nc"><a href="roadmap.shtml" target="_self">Roadmap</a></li>
+          <li class="li_nc"><a href="branding.shtml" target="_self">Pale Moon branding</a></li>
+          <li class="li_nc"><a href="layout-differences.shtml">Pale Moon layout</a></li>
+          <li class="li_nc"><a href="technical.shtml" target="_self">Technical details</a></li>
+        </ul>
+      </li>
+      <li class="li_nc"><a href="screenshots.shtml" target="_self">Screenshots</a></li>
+      <li class="li_nc"><a href="https://github.com/MoonchildProductions/Pale-Moon/wiki/Development-Bounty-Program">Bounty Program</a></li>
+      <li class="li_nc"><a href="donations.shtml">Donations and Support</a></li>
+      <li class="li_nc"><a href="awards/">Awards</a></li>
+    </ul>
+  </li>
+  <li class="li_hc"><a href="#" target="_self">Download</a>
+    <ul class="ul_ch">
+      <li class="li_hc"><a href="#" target="_self">Pale Moon ></a>
+        <ul class="ul_ch">
+          <li class="li_nc"><a href="palemoon-win32.shtml" target="_self">Pale Moon x86</a></li>
+          <li class="li_nc"><a href="palemoon-win64.shtml" target="_self">Pale Moon x64</a></li>
+          <li class="li_nc"><a href="palemoon-portable.shtml" target="_self">Pale Moon Portable</a></li>
+          <li class="li_nc"><a href="http://linux.palemoon.org/" target="_self">Pale Moon for Linux</a></li>          
+          <li class="li_nc"><a style="color: rgb(234, 160, 153);" href="unstable/" target="_self">
+              <small><small>[DEV]</small></small> Unstable versions</a></li>
+        </ul>
+      </li>
+      <li class="li_nc"><a href="http://addons.palemoon.org/language-packs/" target="_self">Pale Moon language packs</a></li>
+      <li class="li_hc"><a href="#" target="_self">Other ></a>
+        <ul class="ul_ch">
+          <li class="li_nc"><a href="contributed-builds.shtml" target="_self">3rd Party Builds</a></li>
+          <li class="li_nc"><a href="archived.shtml" target="_self">Archived versions</a></li>
+         </ul>
+      </li>
+      <li class="li_nc"><a style="color: rgb(234, 160, 153);" href="sourcecode.shtml" target="_self">
+         <small><small>[DEV]</small></small> Source code</a></li>  
+    </ul>
+  </li>
+  <li class="li_hc"><a href="#" target="_self">Add-ons</a>
+    <ul class="ul_ch">
+      <li class="li_nc"><a href="https://addons.palemoon.org/" target="_self">Add-ons site</a></li>
+      <li class="li_nc"><a href="https://addons.palemoon.org/themes/" target="_self">Themes</a></li>
+    </ul>
+  </li>
+  <li class="li_hc"><a href="#" target="_self">Tools</a>
+    <ul class="ul_ch">
+        <li class="li_nc"><a href="sync/" target="_self">Pale Moon Sync service</a></li>        
+        <li class="li_nc"><a href="backuptool.shtml" target="_self">Profile Backup tool</a></li>
+        <li class="li_nc"><a href="commander.shtml" target="_self">Pale Moon Commander</a></li>
+        <li class="li_nc"><a href="https://addons.palemoon.org/addon/tabgroups/" target="_self">Pale Moon Tab Groups</a></li>
+        <li class="li_nc"><a href="flashtool.shtml" target="_self">Flash Protected Mode tool</a></li>
+    </ul>
+  </li>
+  <li class="li_hc"><a href="#" target="_self">Help</a>
+    <ul class="ul_ch">
+      <li class="li_nc"><a href="https://forum.palemoon.org/" target="_blank">Forum</a></li>
+      <li class="li_nc"><a href="faq.shtml" target="_self">F.A.Q.</a></li>
+      <li class="li_nc"><a href="troubleshooting.shtml" target="_self">Troubleshooting</a></li>
+      <li class="li_nc"><a href="knownissues.shtml" target="_self">Known Issues</a></li>
+    </ul>
+  </li>
+  <li class="li_hc"><a href="#" target="_self">Feedback</a>
+    <ul class="ul_ch">
+      <li class="li_nc"><a href="survey2017/" target="_self">Pale Moon Survey results</a></li>
+      <li class="li_nc"><a href="testimonials.shtml" target="_self">Testimonials</a></li>
+      <li class="li_nc"><a href="contact/chat.shtml" target="_self">Live chat</a></li>
+      <li class="li_nc"><a href="contact/" target="_self">Contact</a></li>
+    </ul>
+  </li>
+</ul>
+</div>
+
+<!-- END OF PULL DOWN MENU -->
+ <br>
+      </td>
+    </tr>
+    <tr>
+      <td class="c8">
+      <h1> Pale Moon: Release notes </h1>
+      <h3>27.6.0 (2017-11-07)</h3>
+This is a major development update.<br>
+      <br>
+      <span style="font-weight: bold;">Changes/fixes:</span><br>
+      <ul>
+        <li>Dropped support for Direct2D 1.0 to avoid font rendering
+issues. Windows installations not capable of using Direct2D 1.1 will
+now fall back to software rendering. As a result, fonts may look
+different from this version onwards if you are on Windows Vista or
+Windows 7. Users on Windows 7 affected by this should install the <a
+ href="https://www.microsoft.com/en-us/download/details.aspx?id=36805"
+ target="_blank">Platform Update</a> to re-enable Direct2D.</li>
+        <li>Updated the Brotli decoder library, and enabled support for
+Brotli HTTP content-encoding by default.</li>
+        <li>Added notifications to inform users about WebExtensions not
+being supported if they try to install them (as opposed to "extension
+is corrupt")</li>
+        <li>Added a number of DOM childNode convenience functions. This
+should fix some lazy-loading frameworks.<br>
+(enjoy your LOLcats again!)</li>
+        <li>Changed automatic updates over to the new infrastructure.</li>
+        <li>Added extra proxy settings in Options, covering DNS lookups
+through SOCKS v5 and automatic proxy authentication with known
+credentials.</li>
+        <li>Added a selectable fallback character encoding of UTF-8 and
+fallback to UTF-8 as a last effort. (Issue #1423)</li>
+        <li>Improved timing of <code>canplay</code> and <code>canplaythrough</code>
+firing to work around a potential race condition locking up queued
+video playback.</li>
+        <li>Improved upmixing of mono sound for multi-channel setups.</li>
+        <li>Fixed a parallelization issue with the KISS-FFT library
+causing
+CPU-deadlocked threads (Issue #1425)</li>
+        <li>Fixed "Remove from history" function from the downloads
+panel.</li>
+        <li>Forced focus on the address bar in new windows if the
+content is a blank/empty document.</li>
+        <li>Fixed the dropmarker in the address bar to allow the
+suggestions to be closed with a click.</li>
+        <li>Further cleaned up the status bar code.</li>
+        <li>Disabled window.showModalDialog; it's been removed from the
+spec 2 years ago and has potential abuse issues (modal dialogs block
+the UI)</li>
+        <li>Fixed image decoder calls to make sure the image load event
+doesn't fire prematurely.</li>
+        <li>Updated LibPNG to 1.6.28, and enabled faster SSE2 decoding.</li>
+        <li>Updated WOFF2 code from upstream.</li>
+        <li>Updated the zlib compression library.</li>
+        <li>Made general improvements to internal code structure and
+spec adherence.</li>
+        <li>Fixed an issue with certain command-line parameters being
+used.</li>
+        <li>Updated the default theme to improve consistency and
+contrast of toolbar and download buttons.</li>
+        <li>Increased the default duration of notification pop-ups and
+made them configurable.</li>
+        <li>Improved handling of audio-visual media (ongoing).</li>
+        <li>Fixed an issue in CSS where elements would sometimes reflow
+to the next line even with sufficient visual space.</li>
+        <li>Aligned the implementation of <code>for(let x=y;;)</code>
+loops with the final ES6 specification.</li>
+        <li>Fixed the selection system inside of a nested
+contenteditable element being broken.</li>
+        <li>Fixed Windows 10 detection for blocklisting graphics
+drivers.</li>
+        <li>Enabled pasting of clipboard data in documents without an
+editor element to improve web compatibility.</li>
+        <li>Fixed the uninstallation routine of restartless add-ons.</li>
+        <li>Fixed the handling of unimplemented functions in the
+console API.</li>
+        <li>Updated the Facebook user-agent to enable otherwise
+vendor-restricted functionality.</li>
+        <li>Updated the SVG scaling cache limit to be more lenient for
+larger SVG images at a small performance trade-off, working around some
+sites' design issues.</li>
+      </ul>
+      <span style="font-weight: bold;">Security/privacy fixes:<br>
+      </span>
+      <ul>
+        <li>Added an option to clear Site Connectivity Data (delete
+history).</li>
+        <li>Removed stale entries from the HSTS preload list, and
+improved generation/processing of it.</li>
+        <li>Removed undesired certificate issuer organization to common
+name fallback (if issuer org is empty).</li>
+        <li>Added pretty-printing for ECDSA-SHA224, 256, 384 and 512
+hashed certificate signatures.</li>
+        <li>Worked around some more issues with broken Apple fonts.</li>
+      </ul>
+      <h3>27.5.1 (2017-10-10)</h3>
+This is a security and stability update to the browser, as well as
+fixing some issues users have indicated.<br>
+      <br>
+      <span style="font-weight: bold;">Changes/fixes:</span><br>
+      <ul>
+        <li>Changed the default Windows 10 styling when no accent color
+is applied to black-on-white.</li>
+        <li>Changed the theme styling on Windows 10 when the system
+window frame is used (menu bar enabled) to use the window manager
+background directly, preventing visual lag updating the window color
+when it changes.</li>
+        <li>Updated user agent overrides for DropBox, YouTube and
+Yahoo to work around user agent sniffing issues.</li>
+        <li>Fixed a crash in the media subsystem.<br>
+        </li>
+        <li>Fixed a regression where video playback hardware
+acceleration was disabled incorrectly on some systems.</li>
+      </ul>
+      <span style="font-weight: bold;">Security fixes:</span><br>
+      <ul>
+        <li>Updated the hyphenation library to the latest upstream code
+to fix a
+security issue.</li>
+        <li>Updated NSPR to 4.16-RTM with a patch to un-bust building
+on win64.</li>
+        <li>Updated NSS to 3.32.1-RTM.</li>
+        <li>Worked around some more issues with Mac fonts
+(CVE-2017-7825).</li>
+        <li>Fixed a potential rooting hazard in NPAPI plugin code. <span
+ style="color: rgb(191, 64, 64);">DiD</span></li>
+        <li>Fixed a potential reference issue in JavaScript arrays. <span
+ style="color: rgb(191, 64, 64);">DiD</span></li>
+      </ul>
+      <span style="color: rgb(191, 64, 64);">DiD</span> This means that
+the fix is "Defense-in-Depth": It is a fix that does not apply to a
+(potentially) actively exploitable vulnerability in Pale Moon, but
+prevents future vulnerabilities caused by the same code when
+surrounding code changes, exposing the problem.
+      <h3>27.5.0 (2017-09-26)</h3>
+This is a major update furthering general development of the browser.<br>
+      <br>
+      <span style="font-weight: bold;">Changes/fixes:</span><br>
+      <ul>
+        <li>User interface:<br>
+        </li>
+        <ul>
+          <li>Added a menu option to restart the browser.</li>
+          <li>Added Windows-specific CSS parameters and queries for the
+use of the system accent color. Added are parameters <code>-moz-win-accentcolor</code>
+and <code>-moz-win-accentcolortext</code>, and the media query <code>-moz-win-accentcolor-applies</code>
+to know if Windows is actively using an accent color.<br>
+          </li>
+          <li>Changed Windows' browser CSS sheet ot use variables
+instead
+of hard-coding colors, simplifying its style and making it more
+flexible. Further cleaned up the Windows 10 specific browser style.<br>
+          </li>
+          <li>Changed the theme on Windows 10 to use the new accent
+colors and improve O.S. consistency.</li>
+          <li>Fixed some general inconsistencies in the Windows theme
+on all Windows operating systems.</li>
+          <li>Updated Windows widgets to be able to pick up Windows 10
+accent colors dynamically and have the browser 's look and feel respond
+accordingly, even with automatic color changes based on desktop
+wallpaper.</li>
+          <li>Removed the experimental FF4 prerelease
+status-in-addressbar feature because the already-crowded address bar
+needs a break. This should solve some extension interop issues, theme
+issues and domain highlighting issues people have reported.</li>
+          <li>Cleaned up some dead code for the plugin updater that no
+longer exists.</li>
+          <li>Fixed a text direction issue in preferences.</li>
+          <li>Fixed an issue with disabled context menu entries after
+using Customize...</li>
+          <li>Reorganized and cleaned up the status preferences.</li>
+        </ul>
+        <li>Media:<br>
+        </li>
+        <ul>
+          <li>MSE Media updates (ongoing). We are focusing on improving
+MP4 handling.<br>
+          </li>
+          <li>Improved MP3 metadata parsing (e.g. incorrect duration
+with embedded album cover)</li>
+          <li>Fixed a number
+of searching issues in MP3 files</li>
+          <li>Fixed a few crashes.</li>
+        </ul>
+        <li>Fixed an issue with automatically exporting bookmarks to
+HTML on shutdown.</li>
+        <li>Fixed a regression re: domains allowed to/blocked from
+installing add-ons.</li>
+        <li>Fixed several internal errors thrown in the front-end.</li>
+        <li>Fixed several minor issues in the devtools.</li>
+        <li>Added a fix to prevent the home page from being loaded (and
+subsequently overridden) when restoring a session.</li>
+        <li>Added an option to control add-on blocklist behavior
+(Options -&gt; Security)</li>
+        <li>Added DOM function <code>isSameNode()</code>.</li>
+        <li>Added DOM <code>onvisibilitychange</code> event.</li>
+        <li>Added <code>document.scrollingelement</code> (CSSOM).</li>
+        <li>Added a basic implementation of <code>Object.values</code>
+and <code>Object.entries</code>
+enumerator functions
+(ECMA2017 draft).<br>
+        </li>
+        <li>Added "Open in new private window" to bookmarks, feeds and
+history entries.</li>
+        <li>Added HTTP request method OPTIONS.</li>
+        <li>Added an option to exit to a no-content page after
+encountering a network or security error.<br>
+This is controlled with the preference <code>browser.escape_to_blank</code>
+-- when set to <code>true</code>, "Get me out of here" buttons will
+load a blank page instead of the browser's home page.<br>
+        </li>
+        <li>Added experimental Brotli accept-encoding (alternative
+to gzip/deflate compressed http data
+transfer). Disabled by default for now because it causes issues.<br>
+        </li>
+        <li>Improved the handling of several CSS selectors.</li>
+        <li>Changed session storage to remember form data for https
+sites by default.</li>
+        <li>Added (yet another) trap prevention method to
+onbeforeunload events.</li>
+        <li>Fixed privacy preferences not correctly resetting all
+options when choosing "Remember History"</li>
+        <li>Fixed not being able to deselect loading bookmarks in the
+sidebar.</li>
+        <li>Limited the display of user names and hosts in the http
+auth dialog to sane lengths, preventing over-sizing issues.</li>
+        <li>Fixed a number of potential crash points.</li>
+        <li>Improved the security of the Windows dll loader module.</li>
+        <li>Reinstated "Open all in tabs" option on folders of live
+bookmarks (feeds).</li>
+        <li>Made URL matching more liberal in selected text to make it
+easier to open stated addresses.</li>
+        <li>Fixed an issue with Graphite font rendering where automatic
+font collision fixing didn't always work.</li>
+        <li>Color Management for images is now disabled by default on
+Linux, due to many distributions not having a streamlined setup with
+sane default ICC profiles, which makes images look worse when color
+management is enabled.</li>
+        <li>Tightened the update security check to prevent acceptance
+of update manifests that have been intercepted/replaced through https
+MitM attacks.<br>
+Please be aware that https-filtering antivirus may interfere with
+future application updates as a result.<br>
+        </li>
+        <li>Updated the ANGLE library to broaden WebGL support and
+reduce the potential of crashes (due to junk being sent to the video
+driver).</li>
+        <li>Added content-sniffing for WebP images (working around
+CloudFront's incorrect content-type headers).</li>
+        <li>Fixed a problem with some H.264 media not playing (SPS NAL).</li>
+        <li>Improved timer efficiency (switch back to lower precision
+when high precision is no longer needed, reducing CPU/power
+consumption).</li>
+        <li>Improved context search on selected text/links.</li>
+        <li>Updated address bar handling with Alt or Shift modifiers,
+so that "switch to tab" with a modifier can open copies of
+already-opened sites.</li>
+        <li>Added a fix on Linux for starting the browser from
+Enlightenment.</li>
+        <li>Privacy fix: Pale Moon will now clear QuotaManager storage
+(asm.js
+cache/IndexedDB data) as part of clearing Offline Website Data.</li>
+      </ul>
+      <h3>27.4.2.1 (2017-08-28)</h3>
+This is an out-of-band update for the portable version of the browser
+only (Windows).<br>
+This fixes a few issues in the portable shell regarding backups and
+settings.<br>
+      <br>
+To update, please follow the recommended update procedure listed on the
+      <a href="palemoon-portable.shtml">Pale Moon Portable page</a>.<br>
+      <h3>27.4.2 (2017-08-22)</h3>
+This is a small update to address some security and stability issues.<br>
+      <br>
+      <span style="font-weight: bold;">Changes/fixes:</span><br>
+      <ul>
+        <li>Fixed a number of crashes.</li>
+        <li>Enabled the opt-in debugging feature to log SSL keys to a
+file in all builds.</li>
+        <li>Added a fix for TLS 1.3 handshakes causing a browser
+hangup.<br>
+Handshakes should be considerably faster now and no longer
+stall in the wrong circumstances.<br>
+        </li>
+      </ul>
+      <span style="font-weight: bold;">Security fixes:</span><br>
+      <ul>
+        <li>Updated NSPR to 4.15.</li>
+        <li>Updated NSS to 3.31.1.</li>
+        <li>Fixed a DoS issue using overly long Username in URL scheme
+(CVE-2017-7783)</li>
+        <li>Fixed an issue where (cross domain) iframes could break
+scope (CVE-2017-7787) </li>
+        <li>Fixed an issue in WindowsDllDetourPatcher (CVE-2017-7804)</li>
+        <li>Fixed an issue with elliptic curve addition in mixed
+Jacobian-affine coordinates (CVE-2017-7781)</li>
+        <li>Fixed a UAF in nsImageLoadingContent (CVE-2017-7784)</li>
+        <li>Fixed a UAF in WebSockets (CVE-2017-7800)</li>
+        <li>Fixed a heap-UAF in RelocateARIAOwnedIfNeeded
+(CVE-2017-7809) <span style="color: rgb(191, 64, 64);">DiD</span>
+(accessibility is disabled)</li>
+      </ul>
+      <span style="color: rgb(191, 64, 64);"></span>
+      <h3>27.4.1 (2017-08-03)</h3>
+This is a small update to address some media and web compatibility
+issues.<br>
+      <br>
+      <span style="font-weight: bold;">Changes/fixes:</span><br>
+      <ul>
+        <li>Fixed an issue where media playback would not use hardware
+acceleration properly when using MSE.<br>
+This would cause high CPU usage and/or choppy playback for HD video on
+e.g. YouTube.</li>
+        <li>Fixed ES6 iterator chains to be spec-compliant.</li>
+        <li>Fixed ES6 vector append calls and some related memory leaks.<br>
+        </li>
+        <li>Added a workaround to reduce the likelihood of a potential
+rare (timing-critical) crash.<br>
+        </li>
+      </ul>
+      <h3>27.4.0 (2017-07-12)</h3>
+This is a major update to straighten out most of the media streaming
+issues, as well as adding the necessary enhancements, bugfixes and
+security fixes to the browser.<br>
+      <br>
+      <span style="font-weight: bold;">Changes/fixes:</span><br>
+      <ul>
+        <li>Completely re-worked the Media Source Extensions code to
+make it spec compliant, and asynchronous as per specification for MSE
+with MP4. This should fix playback problems on YouTube, Twitch, Vimeo
+and other sites that previously had some issues. A massive thank you to
+Travis for his tireless work on making this happen!<br>
+Please note that MSE+WebM (disabled by default) is not using this new
+code yet (planned for the next release), and as such there is a
+temporary set of things to keep in mind if you don't use default
+settings:</li>
+        <ul>
+          <li>If you have previously enabled MSE+WebM, this setting
+will be reset when you update to avoid conflicting settings with the
+updated MSE code.</li>
+          <li>We've added an extra setting in Options to disable the
+updated MSE code (asynchronous use) in case you need to use WebM or are
+otherwise having issues with the updated code (please let us know in
+that case).</li>
+          <li>Once again, the MSE+WebM and Asynchronous MSE use are
+currently mutually exclusive. You can have one or the other, not both,
+until we sort out the code for WebM. To enable MSE+WebM you will first
+have to disable Asynchronouse MSE in settings (otherwise the WebM
+setting will be greyed out and disabled).<br>
+          </li>
+        </ul>
+        <li>Added a control in options/preferences for HSTS and HPKP
+usage.</li>
+        <li>Changed HTML bookmark exports to write CRLF line
+endings to the file on Windows.</li>
+        <li>Leveraged multi-core rendering for libVPX (VP8/VP9 WebM
+decoding).</li>
+        <li>Fixed some issues accessing DeviantArt (useragent-sniffing).</li>
+        <li>Aligned CSS <code>text-align</code> with the spec.</li>
+        <li>Added a recovery module for browser initialization issues
+(e.g. when using a wrong language pack).</li>
+        <li>Fixed spurious console errors for XHR requests with certain
+http response codes.</li>
+        <li>Enabled v-sync aligned refresh for a smoother scrolling
+experience.</li>
+        <li>Removed support for CSS XP-theme media queries.</li>
+        <li>Improved console error reporting.</li>
+        <li>Fixed resetting toolbars and controls from the safe mode
+dialog.</li>
+        <li>Fixed bookmark recovery option from the safe mode dialog.</li>
+        <li>Fixed innerText getters for display:none elements.</li>
+        <li>Fixed a GL buffer crash that might occur with certain
+combinations of drivers and hardware.</li>
+        <li>Added some more details to about:support.</li>
+        <li>Fixed a potential crash when the last audio device is
+removed during playback.</li>
+        <li>Fixed a crash on about:support when windowless browsers are
+created.</li>
+        <li>Updated <code>&lt;select&gt;</code> elements to blank if
+the actively set value doesn't match any of the options.</li>
+        <li>Updated the interpretation of 2-digit years in date formats
+to match other browsers:<br>
+0-49 = 2000-2049, 50-99 = 1950-1999.</li>
+        <li>Added "<code>q</code>" units to CSS (quarter of a
+millimeter).</li>
+        <li>Added <code>.origin</code> property to blobs.</li>
+        <li>Fixed several minor layout issues.</li>
+        <li>Fixed disabled HTML elements not producing the proper JS
+events.</li>
+        <li>Implemented web content handler blacklist according to the
+spec, allowing more than feeds to be registered.</li>
+        <li>Fixed a spec compliance issue with execCommand() on HTML
+elements.</li>
+        <li>Fixed a problem with table borders being drawn uneven or
+being omitted when zooming the page.</li>
+        <li>Added devtools "filter URLs" option in the network panel.</li>
+        <li>Added visual sorting options to the Network inspector.</li>
+        <li>Added importing of login data from Chrome profiles on
+Windows (Chrome has to be closed first).</li>
+        <li>Added importing of tags from bookmark export files (HTML
+format).</li>
+        <li>Updated usage of SourceMap headers with the updated spec
+(SourceMap header, keeping X-SourceMap as a fallback).</li>
+        <li>Fixed several cases of wrongly-used negations in JS modules.</li>
+        <li>Added the <code>auxclick</code> mouse event.</li>
+        <li>Added a control to not autoplay video unless it is in view (<span
+ class="blob-code-inner"><span class="pl-s"><span class="pl-pds"></span>media.block-play-until-visible).</span></span></li>
+        <li>Updated
+the Graphite font library to 1.3.10.</li>
+        <li>Updated
+how image and media elements respond to window size changes (responsive
+design).</li>
+        <li>Added
+parsing and use of rotation meta data in video.</li>
+        <li>Fixed
+several crashes in a number of modules.</li>
+        <li>Fixed
+performance regression for scaling large vector images (e.g. MSIE
+Chalkboard test) \o/</li>
+        <li>Fixed some
+issues with notification icons.</li>
+        <li>Fixed some
+internal errors with live bookmarks.</li>
+        <li>Updated
+SQLite to 3.19.3.</li>
+        <li>Fixed
+several reported issues with devtools (cli-cookies, cli help, copying
+cURL, inspecting SVGs, element size calculations, etc.)</li>
+        <li>Fixed an
+issue where a server response was allowed to override add-ons'
+specified version ranges even for add-ons that have strict
+compatibility (e.g. themes, language packs).</li>
+      </ul>
+      <span style="font-weight: bold;">Security fixes:</span><br>
+      <ul>
+        <li>Removed preloading of HPKP hosts and enabled HPKP header
+enforcement.<br>
+        </li>
+        <li>Added support for TLS 1.3, the up-next secure connection
+protocol.</li>
+        <li>Fixed an issue with TLS 1.3 not supporting renegotiation by
+design.</li>
+        <li>Relaxed some restrictions for CSP to temporarily work
+around web compatibility issues with the CSP-3 deprecated `child-src`
+directive.</li>
+        <li>Updated NSS to 3.28.5.1-PM to address some security issues.</li>
+        <li>Updated the installer selfextractor module to address
+unsafe loading of libraries.</li>
+        <li>Changed the way certain resources are included to reduce
+effectiveness of some common fingerprinting techniques. (e.g.
+browserleaks.com)<br>
+        </li>
+        <li>Fixed a regression in the display of security information
+in the page info dialog for insecure content.</li>
+        <li>Fixed two potential issues with allocating memory for
+video. <span style="color: rgb(191, 64, 64);">DiD</span></li>
+        <li>Fixed a potential issue with the network prediction
+algorithm. <span style="color: rgb(191, 64, 64);">DiD</span></li>
+        <li>Restricted the use of Aspirational scripts in IDNs to
+prevent domain spoofing, in anticipation of the UAX#31 update making
+this official.</li>
+        <li>Prevented a Mac font specific issue that could be abused
+for domain spoofing (CVE-2017-7763)</li>
+        <li>Fixed several potentially exploitable crashes.
+(CVE-2017-7751) (CVE-2017-7757) and some that do not have a CVE
+designation.<br>
+        </li>
+      </ul>
+      <br>
+      <hr style="width: 100%; height: 2px;"><br>
+      <h1> Release notes for previous versions (unsupported) </h1>
+You can find the release notes for previous releases of Pale Moon on
+the <a href="releasenotes-archived.shtml">Archived Versions Release
+Notes</a> page.<br>
+      <br>
+      </td>
+    </tr>
+    <tr>
+      <td class="c9"><!-- Palemoon 728x90 -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Palemoon footer leaderboard -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-4490583218014683"
+     data-ad-slot="3881752368"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+ <br>
+<div style="text-align: center; line-height: 13px;"><small><small>
+<span style="color: rgb(102, 102, 102);">Site and contents &copy;
+2009-2017 <a href="http://www.moonchildproductions.info/">Moonchild Productions</a> - All rights reserved<br>
+Pale Moon is subject to the following <a href="//www.palemoon.org/licensing.shtml">licensing</a>.<br>
+Policies: <a href="//www.palemoon.org/cookies.shtml">Cookies</a> - <a href="//www.palemoon.org/usercontent.shtml">User Content</a>
+- <a href="//www.palemoon.org/privacy.shtml">Privacy</a>.</span>
+</small></small></div> <br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+</body>
+</html>
