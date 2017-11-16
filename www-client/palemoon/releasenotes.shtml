@@ -125,6 +125,25 @@
     <tr>
       <td class="c8">
       <h1> Pale Moon: Release notes </h1>
+      <h3>27.6.1 (2017-11-15)</h3>
+This is a minor bugfix release to address some pressing issues people
+have reported.<br>
+      <br>
+      <span style="font-weight: bold;">Changes/fixes:</span><br>
+      <ul>
+        <li>Fixed a regression with new windows (opening two windows
+from the command-line or file association, focus issues on new windows,
+not loading the home page in a new window, etc.)<br>
+        </li>
+        <li>Aligned XHR with the currect spec to allow <code>withCredentials</code>.</li>
+        <li>Fixed an input element focus issue within handlers.</li>
+        <li>Fixed the processing of all-padding HTTP/2 frames to
+prevent rare HTTP/2 hangups.<br>
+        </li>
+        <li>Updated CitiBank override to work around their login issues.</li>
+        <li>Updated Netflix override to a community-supplied one that
+seems to satisfy their arbitrary restrictions better.</li>
+      </ul>
       <h3>27.6.0 (2017-11-07)</h3>
 This is a major development update.<br>
       <br>
