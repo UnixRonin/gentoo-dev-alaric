@@ -38,7 +38,7 @@
     <ul class="ul_ch">
       <li class="li_nc"><a href="/" target="_self">Pale Moon homepage</a></li>
       <li class="li_nc"><a href="https://start.palemoon.org" target="_self">Pale Moon Start page</a></li>
-      <li class="li_nc"><a href="http://www.fossamail.org" target="_self">FossaMail homepage</a></li>
+      <li class="li_nc"><a href="http://www.basilisk-browser.org" target="_self">Basilisk homepage</a></li>
     </ul>
   </li>
   <li class="li_hc"><a href="#" target="_self">Information</a>
@@ -125,6 +125,42 @@
     <tr>
       <td class="c8">
       <h1> Pale Moon: Release notes </h1>
+      <h3>27.6.2 (2017-11-28)</h3>
+This is a security and minor bugfix update to the browser.<br>
+This will most likely be the last update for 2017, with the holidays
+not far away.<br>
+      <br>
+      <span style="font-weight: bold;">Changes/fixes:</span><br>
+      <ul>
+        <li>Implemented the concept of so-called "cookie-averse
+document objects" which is a security&amp;privacy measure that blocks
+certain web content from setting cookies. This mitigates
+cookie-injection, which might help against "hidden" cookie tracking.<br>
+        </li>
+        <li>Mitigated some domain name spoofing through IDN by using
+dotless-i and dotless-j with accents. (CVE-2017-7832)<br>
+Pale Moon will display these kinds of spoofed domains in punycode now
+in the actual address bar.<br>
+Please note that the <a
+ href="https://forum.palemoon.org/viewtopic.php?f=26&amp;t=15583"
+ target="_blank">identity panel</a> will always be able to help you on
+secure sites when IDNs are in use to notice potential spoofing, as
+opposed to relying on detection algorithms in the URL itself. As such,
+some other issues like CVE-2017-7833 are already mitigated by us.<br>
+        </li>
+        <li>Fixed an issue with mixed-content blocking. (CVE-2017-7835)</li>
+        <li>Added an extra check for the correct signature data type on
+certificates.</li>
+        <li>Added missing sanitization in exporting bookmarks to HTML.
+(CVE-2017-7840)</li>
+        <li>Fixed several crashes and memory safety hazards.</li>
+        <li>Fixed the Linux load throbber image to be properly encoded,
+to prevent flickering.</li>
+        <li>Removed the shortcut key combination for restarting the
+browser to avoid issues with people using certain keyboard layouts
+hitting the combination and unintentionally triggering a browser
+restart.</li>
+      </ul>
       <h3>27.6.1 (2017-11-15)</h3>
 This is a minor bugfix release to address some pressing issues people
 have reported.<br>
