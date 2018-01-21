@@ -125,6 +125,110 @@
     <tr>
       <td class="c8">
       <h1> Pale Moon: Release notes </h1>
+      <h3>27.7.1 (2018-01-18)</h3>
+This is a minor emergency update to address website breakage and a
+theme issue.<br>
+      <br>
+      <span style="font-weight: bold;">Changes/fixes:</span><br>
+      <ul>
+        <li>Added support for Array.prototype[@@unscopables].<br>
+Unfortunately, the addition of Javascript's ES6 Unscopables in 27.7.0
+was incomplete, which caused a number of websites (e.g. Chase on-line
+banking, some Russian government sites) to display blank or not
+complete loading after updating to that version of the browser. This
+update should fix the problem by adding the missing part of the feature.</li>
+        <li>Fixed an issue with the default theme causing tab borders
+to be drawn too thick at higher settings for visual element scaling
+(125%/150%) in Windows.<br>
+        </li>
+      </ul>
+      <h3>27.7.0 (2018-01-15)</h3>
+This is a stability and bugfix release, as well as adding a number of
+new features to further improve web compatibility.<br>
+      <br>
+      <span style="font-weight: bold;">Changes/fixes:</span><br>
+      <ul>
+        <li>Reorganized access to preferences (moved to the Tools menu
+on Linux, and renamed from "Options" to "Preferences" on Windows).</li>
+        <li>Renamed "Restart with add-ons disabled" to "Restart in Safe
+Mode" to better reflect what it does.</li>
+        <li>Worked around an issue with some improperly-encoded PNG
+files not decoding after our libpng update.</li>
+        <li>Fixed an issue on Mac builds not properly populating the
+application menu.</li>
+        <li>Added "My home page" as an option for new tabs.</li>
+        <li>Added an option to disable the 4th and 5th mouse buttons
+(Windows).<br>
+(<code>mouse.button4.enabled</code> and <code>mouse.button5.enabled</code>,
+respectively)</li>
+        <li>Improved the resetting of non-default profiles.</li>
+        <li>Fixed an issue with details/summary having the incorrect
+height if floated, breaking layouts.</li>
+        <li>Made several more improvements to the details/summary tags
+to align them with the current spec and fix some additional bugs.<br>
+        </li>
+        <li>Implemented support for flex/columnset contents inside
+buttons to align its behavior with other browsers.<br>
+(this should fix layout issues with Twitch's new web interface)</li>
+        <li>Fixed an issue where CSS clone operations would draw a
+border.</li>
+        <li>Changed the way fractional border widths are rounded to
+provide more natural behavior.</li>
+        <li>Fixed an issue where number inputs would incorrectly be
+flagged as read-only.</li>
+        <li>Added assets for tile display in the Windows start panel.</li>
+        <li>Finished sync infra swapover by adding a one-time pref
+migration for server used.</li>
+        <li>Improved WebAudio API: Return the connected audio node from
+          <code>AudioNode.connect()</code></li>
+        <li>Added support for a default playback start position in
+media elements.</li>
+        <li>Fixed an assert in cubeb-alsa code (Linux).</li>
+        <li>Added support for media cue-change events (e.g. subtitles).</li>
+        <li>Updated SQLite to 3.21.0.</li>
+        <li>Fixed a crash when trying to use the platform embedded.</li>
+        <li>Fixed devtools (gcli) screenshots on vertical-text pages.</li>
+        <li>Fixed devtools copy as cURL for POST requests.</li>
+        <li>Improved the HTML editor component (several bugfixes).</li>
+        <li>Added support for ES7's exponentiation <code>a ** b</code>
+operator.</li>
+        <li>Fixed an issue with arrow functions incorrectly creating an
+'arguments' binding.</li>
+        <li>Added Javascript's ES6 "unscopables".</li>
+      </ul>
+      <span style="font-weight: bold;">Security/privacy fixes:</span><br>
+      <ul>
+        <li>Disabled automatic filling in of log-in details by default
+to prevent potential risks of credentials being abused (e.g. for
+tracking) or stolen.<br>
+        </li>
+        <li>Added a preference (in the category security) to easily
+enable or
+disable automatic filling in of log-in data.<br>
+        </li>
+        <li>Removed the sending of referrers when opening a link in a
+new private window.</li>
+        <li>Added an option to disable the page visibility Web API (<code>dom.visibilityAPI.enabled</code>),
+allowing users to prevent pages from knowing whether they are being
+actively displayed to the user or not.<br>
+        </li>
+        <li>Removed the "ask every time" policy for cookies. For
+granular control, please use any of the excellent available extensions
+to regulate cookie use on a per-site or per-url basis.<br>
+        </li>
+        <li>Added support for <code>X-Content-Type-Options: nosniff</code>
+(for scripts).</li>
+        <li>Changed the resolution of performance timers to a level
+where any future potential abuse for hardware-timing attacks becomes
+impractical. <span style="color: rgb(191, 64, 64);">DiD</span></li>
+      </ul>
+      <span style="color: rgb(191, 64, 64);">DiD</span> This means that
+the fix is "Defense-in-Depth": It is a fix that does not apply to a
+(potentially) actively exploitable vulnerability in Pale Moon, but
+prevents future vulnerabilities caused by the same code, e.g. when
+surrounding code changes, exposing the problem, or when new attack
+vectors are discovered.<br>
+      <br>
       <h3>27.6.2 (2017-11-28)</h3>
 This is a security and minor bugfix update to the browser.<br>
 This will most likely be the last update for 2017, with the holidays
@@ -303,11 +407,7 @@ on win64.</li>
         <li>Fixed a potential reference issue in JavaScript arrays. <span
  style="color: rgb(191, 64, 64);">DiD</span></li>
       </ul>
-      <span style="color: rgb(191, 64, 64);">DiD</span> This means that
-the fix is "Defense-in-Depth": It is a fix that does not apply to a
-(potentially) actively exploitable vulnerability in Pale Moon, but
-prevents future vulnerabilities caused by the same code when
-surrounding code changes, exposing the problem.
+      <span style="color: rgb(191, 64, 64);"></span>
       <h3>27.5.0 (2017-09-26)</h3>
 This is a major update furthering general development of the browser.<br>
       <br>
