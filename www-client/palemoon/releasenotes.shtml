@@ -125,6 +125,41 @@
     <tr>
       <td class="c8">
       <h1> Pale Moon: Release notes </h1>
+      <h3>27.7.2 (2018-02-01)</h3>
+This is a security and stability update.<br>
+      <br>
+      <span style="font-weight: bold;">Changes/fixes:</span><br>
+      <ul>
+        <li>Changed the <code>X-Content-Type-Options: nosniff</code>
+behavior to only check "success" class server responses, for web
+compatibility reasons.</li>
+        <li>Changed the performance timer resolution once more to a
+granularity of 1 ms, after evaluating more potential ways of abusing
+Spectre.<br>
+This takes the most cautious approach possible lacking more information
+(because apparently NDAs have been signed over this between mainstream
+players), follows Safari's lead, and should make it not just infeasible
+but downright impossible to use these timers for nefarious purposes in
+this context.<br>
+        </li>
+        <li>Improved the debug-only startup cache wrapper to prevent a
+rare crash. <br>
+        </li>
+        <li>Fixed a crash in the XML parser.</li>
+        <li>Added a check for integer overflow in <code>AesTask::DoCrypto()</code>
+(CVE-2018-5122) <span style="color: rgb(191, 64, 64);">DiD</span></li>
+        <li>Fixed a potential race condition in the browser cache.</li>
+        <li>Fixed a crash in HTML media elements (CVE-2018-5102)</li>
+        <li>Fixed a crash in XHR using workers.</li>
+        <li>Fixed a crash with some uncommon FTP operations.</li>
+        <li>Fixed a potential race condition in the JAR library.</li>
+      </ul>
+      <span style="color: rgb(191, 64, 64);">DiD</span> This means that
+the fix is "Defense-in-Depth": It is a fix that does not apply to a
+(potentially) actively exploitable vulnerability in Pale Moon, but
+prevents future vulnerabilities caused by the same code, e.g. when
+surrounding code changes, exposing the problem, or when new attack
+vectors are discovered.
       <h3>27.7.1 (2018-01-18)</h3>
 This is a minor emergency update to address website breakage and a
 theme issue.<br>
@@ -222,13 +257,7 @@ to regulate cookie use on a per-site or per-url basis.<br>
 where any future potential abuse for hardware-timing attacks becomes
 impractical. <span style="color: rgb(191, 64, 64);">DiD</span></li>
       </ul>
-      <span style="color: rgb(191, 64, 64);">DiD</span> This means that
-the fix is "Defense-in-Depth": It is a fix that does not apply to a
-(potentially) actively exploitable vulnerability in Pale Moon, but
-prevents future vulnerabilities caused by the same code, e.g. when
-surrounding code changes, exposing the problem, or when new attack
-vectors are discovered.<br>
-      <br>
+      <span style="color: rgb(191, 64, 64);"></span>
       <h3>27.6.2 (2017-11-28)</h3>
 This is a security and minor bugfix update to the browser.<br>
 This will most likely be the last update for 2017, with the holidays
