@@ -26,7 +26,7 @@ SLOT="0"
 LICENSE="MPL-2.0 GPL-2 LGPL-2.1"
 IUSE="bindist gstreamer +jit +minimal pgo pulseaudio selinux system-cairo system-icu system-jpeg system-sqlite test webm"
 
-SRC_URI="${SRC_URI} ftp://source:current@ftp2.palemoon.org/${P}-source.7z"
+SRC_URI="${SRC_URI} ftp://source:current@archive.palemoon.org/${P}-source.7z"
 
 ASM_DEPEND=">=dev-lang/yasm-1.1"
 
@@ -52,6 +52,7 @@ RDEPEND="
 DEPEND="${RDEPEND}
 	>=sys-devel/binutils-2.16.1
 	virtual/pkgconfig
+	app-arch/p7zip
 	pgo? (
 		>=sys-devel/gcc-4.5 )
 	amd64? ( ${ASM_DEPEND}
@@ -276,6 +277,7 @@ src_install() {
 	pax-mark m "${S}/${obj_dir}"/dist/bin/xpcshell
 
 	# Add our default prefs for firefox
+	mkdir "${S}/${obj_dir}/dist/bin/browser/defaults/preferences/"
 	cp "${FILESDIR}"/gentoo-default-prefs.js-1 \
 		"${S}/${obj_dir}/dist/bin/browser/defaults/preferences/all-gentoo.js" \
 		|| die
