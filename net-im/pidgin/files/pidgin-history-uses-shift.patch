@@ -1,0 +1,36 @@
+---  pidgin-2.10.11/pidgin/gtkconv.c	2014-11-23 11:41:26.000000000 -0500
++++  pidgin-2.10.11/pidgin/gtkconv.c	2015-06-23 14:26:41.463955903 -0400
+@@ -72,10 +72,17 @@
+ 
+ #define CLOSE_CONV_TIMEOUT_SECS  (10 * 60)
+ 
+ #define AUTO_RESPONSE "&lt;AUTO-REPLY&gt; : "
+ 
++/*
++ *  set this to 0 to restore default behavior of Up/Down keys:  Ctrl+Up/Ctrl+Dn for history
++ *  set to 1 to use Shift+Up/Shift+Dn for history, in case Ctrl+Up/Ctrl+Dn are already bound
++ */
++#define HISTORY_USES_SHIFT 1
++
++
+ typedef enum
+ {
+ 	PIDGIN_CONV_SET_TITLE			= 1 << 0,
+ 	PIDGIN_CONV_BUDDY_ICON			= 1 << 1,
+ 	PIDGIN_CONV_MENU			= 1 << 2,
+@@ -2014,12 +2021,13 @@
+ 	conv     = gtkconv->active_conv;
+ 
+ 	if (conv_keypress_common(gtkconv, event))
+ 		return TRUE;
+ 
+-	/* If CTRL was held down... */
+-	if (event->state & GDK_CONTROL_MASK) {
++	/* If CTRL or SHIFT was held down... */
++	if (((event->state & GDK_SHIFT_MASK) && HISTORY_USES_SHIFT)
++	   || ((event->state & GDK_CONTROL_MASK) && !HISTORY_USES_SHIFT)) {
+ 		switch (event->keyval) {
+ 			case GDK_Up:
+ 				if (!gtkconv->send_history)
+ 					break;
+ 
