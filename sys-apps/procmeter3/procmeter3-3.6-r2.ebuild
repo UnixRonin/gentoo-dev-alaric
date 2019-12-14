@@ -30,9 +30,21 @@ src_unpack() {
 	#	- fix up the directory paths to Gentoo standards
 	epatch "${FILESDIR}"/${P}-Makefile.patch
 
-	# Apply procmeter3-statfs-overflow.patch:
+	# Apply procmeter3-3.6-statfs-overflow.patch:
 	#	- make df.c report statfs overflows on >2TB filesystems
 	epatch "${FILESDIR}"/${P}-statfs-overflow.patch
+
+	# Apply procmeter3-3.6-acpi-c.patch:
+	#	- fix off-by-one error in get_acpi_file()
+	epatch "${FILESDIR}"/${P}-acpi-c.patch
+
+	# Apply procmeter3-3.6-off_t.patch:
+	#	- replace nonexistent loff_t type in longrun.c with off_t
+	epatch "${FILESDIR}"/${P}-off_t.patch
+
+	# Apply procmeter3-3.6-stat-disk-sysmacros.patch:
+	#	- properly include <sys/sysmacros.h> for major() and minor() macros
+	epatch "${FILESDIR}"/${P}-stat-disk-sysmacros.patch
 
 	# Replace the awful config example supplied in the source tarball with a
 	# better one so that we don't turn users off the tool at first sight

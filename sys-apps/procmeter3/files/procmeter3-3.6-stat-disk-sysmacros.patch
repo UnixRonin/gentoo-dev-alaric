@@ -1,0 +1,14 @@
+--- modules/stat-disk.c	2010-12-24 05:40:47.000000000 -0500
++++ modules/stat-disk.c	2019-12-14 17:23:37.994065540 -0500
+@@ -22,10 +22,11 @@
+ 
+ #include <unistd.h>
+ #include <dirent.h>
+ #include <sys/stat.h>
+ 
++#include <sys/sysmacros.h>
+ #include <linux/major.h>
+ 
+ #include "procmeter.h"
+ 
+ #define DISK        0

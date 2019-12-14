@@ -1,0 +1,28 @@
+--- modules/acpi.c	2019-12-14 16:48:34.838572236 -0500
++++ modules/acpi.c	2019-12-14 16:47:22.176924836 -0500
+@@ -104,11 +104,11 @@
+ 	int end;
+ 	static char buf[1024];
+ 	fd = open(file, O_RDONLY);
+ 	if (fd == -1) return NULL;
+ 	end = read(fd, buf, sizeof(buf));
+-	buf[end-1] = '\0';
++	buf[end < 1023 ? end : 1023] = '\0';
+ 	close(fd);
+ 	return buf;
+ }
+ 
+ /* Given a buffer holding an acpi file, searches for the given key in it,
+@@ -295,11 +295,11 @@
+ 	if (version == NULL) {
+ 		return 0;
+ 	}
+ 	num = atoi(version);
+ 	if (num < ACPI_VERSION) {
+-		fprintf(stderr, "ProcMeter(%s): ACPI subsystem %s too is old, consider upgrading to %i.\n",__FILE__,
++		fprintf(stderr, "ProcMeter(%s): ACPI subsystem %s is too old, consider upgrading to %i.\n",__FILE__,
+ 				version, ACPI_VERSION);
+ 		return 0;
+ 	}
+ 	else if (num >= 20020214) {
+ 		acpi_labels = acpi_labels_20020214;
