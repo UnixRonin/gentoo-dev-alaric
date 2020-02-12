@@ -144,7 +144,7 @@ PATCHES=(
 	"${DISTDIR}/${PN}-2.10.9-irc_join_sleep.patch" # 577286
 	"${FILESDIR}/${PN}-2.13.0-disable-one-jid-test.patch" # 593338
 	"${FILESDIR}/${PN}-2.13.0-python3_support.patch" #459996
-	"${FILESDIR}/${PN}-2.13.0-ssl-gnutls.patch"
+	"${FILESDIR}/${PN}-2.13.0-gnutls_sni_support.patch" #708226
 	"${FILESDIR}/${PN}-history-uses-shift.patch"
 )
 
