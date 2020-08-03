@@ -1,0 +1,15 @@
+--- xv.h.orig	2010-10-24 13:29:32.205110035 -0400
++++ xv.h	2010-10-24 13:32:35.012110034 -0400
+@@ -21,11 +21,11 @@
+ 
+ /*
+  * uncomment the following, and modify for your site, but only if you've
+  * actually registered your copy of XV...
+  */
+-/* #define REGSTR "Registered for use at the University of Pennsylvania." */
++#define REGSTR "Registered for use on Babylon Communications hosts."
+ 
+ 
+ #ifndef VMS
+ #  define THUMBDIR     ".xvpics"  /* name of thumbnail file subdirectories */
+ #  define THUMBDIRNAME ".xvpics"  /* same as THUMBDIR, unlike VMS case... */
