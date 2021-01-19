@@ -2,6 +2,10 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19Jan 2020: Phil Stracchino <phils@caerllewys.net> icbm-1.5.1.ebuild
+  Add compatibility features for x11-terms/alacritty
+  Set report_url_capture off by default
+
   08 Oct 2019: Phil Stracchino <phils@caerllewys.net> icbm-1.4.12.ebuild
   Implement the URL hook type.  URL hook functions receive an abbreviated
   packet for each URL token in a message.
