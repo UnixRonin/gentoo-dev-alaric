@@ -2,6 +2,86 @@
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
 # (auto-generated from git log)
 
+
+*mydumper-0.10.1 (18 Jan 2021)
+
+  18 Jan 2021; David Ducos
+
+  OS support:
+
+    el6 removed
+    buster and bionic added
+
+  New Features:
+
+    clang-format for 0.10.0 (#188)
+    PS8 skip backup locks (#187)
+    Tidb support (#155)
+
+  Bug Fixes:
+
+    Add quoting to column names when generating string for SELECT (#216)
+    Fix rows max to use unsigned instead of signed max (#248)
+    Fix connection reference in binlog_thread() (#217)
+    fix for #206 (#208)
+    Ssl fixes (#226)
+    Memleak fixes + Improvements (#176)
+    Fix issue #135 (#140)
+    Fixed issue: #172 (#173)
+    Fix wrong WITH_SSL naming
+    cmakedine WITH_SSL
+
+  
+
+
+*mydumper-0.9.5 (04 May 2018)
+
+  04 May 2018; Max Bubenick <maxbube@gmail.com> 
+
+  New Features:
+
+    Add insert-ignore option (#20)
+    Allow skipping a very large number of tables (#82)
+    Support SSL MySQL connections (#36)
+    Mysql generated field support (#108)
+
+  Bug Fixes:
+
+    adding json support. Fixes #46 (#63)
+    Do not check for long running queries when no-lock is on (#90)
+    fix bug while create_databse function test database schema file exist (#75)
+    Fix memleaks in mydumper (#113)
+    fix timestamp column default values will be changed after using mydumper and myloader (#126)
+    fix --defaults-file option does not honor port (#103)
+
+
+
+*mydumper-0.9.3 (08 Sep 2017)
+
+  08 Sep 2017; Max Bubenick <maxbube@gmail.com> 
+
+    resolve issue #32 with empty GTID in master metadata on galera cluster. (#33)
+    add so.1 suffix for xmake to find libatomic on Debian (and Ubuntu?) (#35)
+    fix yet another errernous if when using defaults_file (#27)
+    lp1640728 fix reading cred files (#21)
+    Merge pull request #18 from maxbube/issue16
+    Merge pull request #19 from webbed88/master
+    correct 'this ‘if’ clause does not guard' error when using make
+    issue#16 complete inserts
+    Merge pull request #7 from grypyrg/trx_isolation_change_error
+    Merge pull request #13 from maxbube/backup_locks
+    Add support to Percona Backup Locks to avoid FTWRL
+    make changing trx isolation level a critical error, exit the program if this failed or if starting a trx with consistent snapshot failed
+    Merge pull request #3 from cezmunsta/add-defaults-file
+    Updated description for -u to account for share use between mydumper and myloader; tidied source indentation
+    Added --defaults-file to mydumper and myloader
+    Merge pull request #2 from maxbube/lp1529848
+    option to ingnore views
+    Merge pull request #1 from maxbube/lp1525216
+    fix lp:1525216 row chunking all NULL values
+
+
+
 *mydumper-0.6.2 (09 Aug 2015)
 
   09 Aug 2015; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
