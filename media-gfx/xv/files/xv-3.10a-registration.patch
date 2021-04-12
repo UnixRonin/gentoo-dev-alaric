@@ -1,15 +1,14 @@
---- xv.h.orig	2010-10-24 13:29:32.205110035 -0400
-+++ xv.h	2010-10-24 13:32:35.012110034 -0400
-@@ -21,11 +21,11 @@
- 
- /*
+--- xv-3.10a/xv.h.orig	1995-01-23 15:22:23.000000000 -0500
++++ xv-3.10a/xv.h	2021-04-12 12:49:26.778757827 -0400
+@@ -15,10 +15,11 @@
   * uncomment the following, and modify for your site, but only if you've
   * actually registered your copy of XV...
   */
--/* #define REGSTR "Registered for use at the University of Pennsylvania." */
-+#define REGSTR "Registered for use on Babylon Communications hosts."
+ /* #define REGSTR "Registered for use at the University of Pennsylvania." */
  
++#define REGSTR "Registered for use on Babylon Communications hosts."
  
  #ifndef VMS
  #  define THUMBDIR     ".xvpics"  /* name of thumbnail file subdirectories */
  #  define THUMBDIRNAME ".xvpics"  /* same as THUMBDIR, unlike VMS case... */
+ #  define CLIPFILE     ".xvclip"  /* name of clipboard file in home directory */
