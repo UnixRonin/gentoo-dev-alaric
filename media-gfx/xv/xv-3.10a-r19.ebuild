@@ -1,9 +1,9 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
-inherit eutils flag-o-matic
+EAPI=6
+
+inherit eutils flag-o-matic toolchain-funcs
 
 JUMBOV=20070520
 DESCRIPTION="Interactive image manipulation program supporting a wide variety of formats"
@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/png-mng/${P}-jumbo-patches-${JUMBOV}.tar.gz
 
 LICENSE="xv"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~ppc-macos"
+KEYWORDS="~alpha amd64 ~hppa ~ia64 ~mips ppc ppc64 sparc x86 ~amd64-linux ~x86-linux ~ppc-macos"
 IUSE="jpeg tiff png"
 
 DEPEND="x11-libs/libXt
@@ -23,29 +23,25 @@ DEPEND="x11-libs/libXt
 	png? ( >=media-libs/libpng-1.2:0= sys-libs/zlib )"
 RDEPEND="${DEPEND}"
 
+PATCHES=(
+	"${WORKDIR}/${P}-jumbo-fix-enh-patch-${JUMBOV}.txt"
+	"${FILESDIR}/${P}-osx-bsd-${JUMBOV}.patch"
+	"${FILESDIR}/${P}-vdcomp-osx-${JUMBOV}.patch"
+	"${FILESDIR}/${P}-disable-jp2k-${JUMBOV}.patch"
+	"${FILESDIR}/${P}-fix-wait-${JUMBOV}.patch"
+	"${FILESDIR}/${P}-add-ldflags-${JUMBOV}.patch"
+	"${FILESDIR}/${P}-libpng15-r1.patch"
+	"${FILESDIR}/${P}-wformat-security.patch"
+	"${FILESDIR}/${P}-registration.patch"
+)
+
 src_prepare() {
-	# Apply the jumbo patch
-	epatch "${WORKDIR}"/${P}-jumbo-fix-enh-patch-${JUMBOV}.txt
+	default
 
-	# OSX and BSD xv.h define patches
-	epatch "${FILESDIR}"/${P}-osx-bsd-${JUMBOV}.patch
-
-	# OSX malloc patch
-	epatch "${FILESDIR}"/${P}-vdcomp-osx-${JUMBOV}.patch
-
-	# Disable JP2K (i.e. use system JPEG libs)
-	epatch "${FILESDIR}"/${P}-disable-jp2k-${JUMBOV}.patch
-
-	# Fix -wait option (do not rely on obsolete CLK_TCK)
-	epatch "${FILESDIR}"/${P}-fix-wait-${JUMBOV}.patch
-
-	# Use LDFLAGS on link lines
-	epatch "${FILESDIR}"/${P}-add-ldflags-${JUMBOV}.patch
-
-	epatch "${FILESDIR}"/${P}-libpng15-r1.patch
-
-	# We're registered
-	epatch "${FILESDIR}"/${P}-registration.patch
+	append-cppflags -DUSE_GETCWD -DLINUX -DUSLEEP
+	use jpeg && append-cppflags -DDOJPEG
+	use png && append-cppflags -DDOPNG
+	use tiff && append-cppflags -DDOTIFF -DUSE_TILED_TIFF_BOTLEFT_FIX
 
 	# Link with various image libraries depending on use flags
 	IMAGE_LIBS=""
@@ -57,23 +53,18 @@ src_prepare() {
 		-e 's/\(^JPEG.*\)/#\1/g' \
 		-e 's/\(^PNG.*\)/#\1/g' \
 		-e 's/\(^TIFF.*\)/#\1/g' \
-		-e "s/\(^LIBS = .*\)/\1${IMAGE_LIBS}/g" Makefile
+		-e "s/\(^LIBS = .*\)/\1${IMAGE_LIBS}/g" Makefile || die
 
 	# /usr/bin/gzip => /bin/gzip
-	sed -i -e 's#/usr\(/bin/gzip\)#'"${EPREFIX}"'\1#g' config.h
+	sed -i -e 's#/usr\(/bin/gzip\)#'"${EPREFIX}"'\1#g' config.h || die
 
 	# Fix installation of ps docs
-	sed -i -e 's#$(DESTDIR)$(LIBDIR)#$(LIBDIR)#g' Makefile
+	sed -i -e 's#$(DESTDIR)$(LIBDIR)#$(LIBDIR)#g' Makefile || die
 }
 
 src_compile() {
-	append-flags -DUSE_GETCWD -DLINUX -DUSLEEP
-	use jpeg && append-flags -DDOJPEG
-	use png && append-flags -DDOPNG
-	use tiff && append-flags -DDOTIFF -DUSE_TILED_TIFF_BOTLEFT_FIX
-
 	emake \
-		CC="$(tc-getCC)" CCOPTS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
+		CC="$(tc-getCC)" CCOPTS="${CPPFLAGS} ${CFLAGS}" LDFLAGS="${LDFLAGS}" \
 		PREFIX="${EPREFIX}"/usr \
 		DOCDIR="${EPREFIX}/usr/share/doc/${PF}" \
 		LIBDIR="${T}"
