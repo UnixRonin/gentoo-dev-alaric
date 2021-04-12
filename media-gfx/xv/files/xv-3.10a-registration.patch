@@ -1,4 +1,4 @@
---- xv-3.10a/xv.h.orig	1995-01-23 15:22:23.000000000 -0500
+--- xv-3.10a/xv.h	1995-01-23 15:22:23.000000000 -0500
 +++ xv-3.10a/xv.h	2021-04-12 12:49:26.778757827 -0400
 @@ -15,10 +15,11 @@
   * uncomment the following, and modify for your site, but only if you've
