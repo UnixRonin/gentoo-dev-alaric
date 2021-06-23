@@ -2,6 +2,11 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*procmeter3-3.6-r4 (22 JUN 2021)
+  22 JUN 2021; Phil Stracchino <phils@caerllewys.net>:
+  Updated ebuild to EAPI 6
+  Purged older revisions and their patches.
+
 *procmeter3-3.6 (22 JAN 2012)
   22 JAN 2012; Phil Stracchino <phils@caerllewys.net>:
   Upstream update to 3.6

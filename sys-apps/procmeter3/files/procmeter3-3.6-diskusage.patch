@@ -1,5 +1,5 @@
---- modules/df.c.orig	2019-12-15 15:38:14.662711907 -0500
-+++ modules/df.c	2019-12-15 15:41:43.103118202 -0500
+--- procmeter3-3.6/modules/df.c.orig	2019-12-15 15:38:14.662711907 -0500
++++ procmeter3-3.6/modules/df.c	2019-12-15 15:41:43.103118202 -0500
 @@ -5,11 +5,11 @@
  
    Disk capacity monitoring source file.

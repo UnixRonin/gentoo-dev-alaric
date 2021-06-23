@@ -2,8 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=3
-inherit eutils multilib toolchain-funcs
+EAPI=6
+
+inherit eutils flag-o-matic toolchain-funcs
 
 DESCRIPTION="Fast, flexible, modular system monitoring tool for Unix and the X Window System"
 HOMEPAGE="https://www.gedanken.org.uk/software/procmeter3/"
@@ -22,32 +23,18 @@ DEPEND="x11-libs/libXaw
 
 RDEPEND="${DEPEND}"
 
-src_unpack() {
-	unpack "${A}"
-	cd "${S}"
+PATCHES=(
+	"${FILESDIR}"/${P}-Makefile.patch
+	"${FILESDIR}"/${P}-statfs-overflow.patch
+	"${FILESDIR}"/${P}-acpi-c.patch
+	"${FILESDIR}"/${P}-off_t.patch
+	"${FILESDIR}"/${P}-diskusage.patch
+	"${FILESDIR}"/${P}-stat-disk-sysmacros.patch
+)
 
-	# Apply procmeter3-Makefile.patch:
-	#	- fix up the directory paths to Gentoo standards
-	epatch "${FILESDIR}"/${P}-Makefile.patch
 
-	# Apply procmeter3-3.6-statfs-overflow.patch:
-	#	- make df.c report statfs overflows on >2TB filesystems
-	epatch "${FILESDIR}"/${P}-statfs-overflow.patch
-
-	# Apply procmeter3-3.6-acpi-c.patch:
-	#	- fix off-by-one error in get_acpi_file()
-	epatch "${FILESDIR}"/${P}-acpi-c.patch
-
-	# Apply procmeter3-3.6-off_t.patch:
-	#	- replace nonexistent loff_t type in longrun.c with off_t
-	epatch "${FILESDIR}"/${P}-off_t.patch
-
-	# Apply procmeter3-3.6-stat-disk-sysmacros.patch:
-	#	- properly include <sys/sysmacros.h> for major() and minor() macros
-	epatch "${FILESDIR}"/${P}-stat-disk-sysmacros.patch
-
-	# Replace the awful config example supplied in the source tarball with a
-	# better one so that we don't turn users off the tool at first sight
+src_prepare() {
+	default
 
 	cp "${FILESDIR}"/procmeterrc "${S}"/procmeterrc
 }
@@ -80,4 +67,3 @@ src_install() {
 	[ -f "${D}"/usr/bin/procmeter3-gtk2 ] && ln -fs procmeter3-gtk2 "${D}"/usr/bin/gprocmeter3
 	[ -f "${D}"/usr/bin/procmeter3-xaw ] && ln -fs procmeter3-xaw "${D}"/usr/bin/procmeter3
 }
-

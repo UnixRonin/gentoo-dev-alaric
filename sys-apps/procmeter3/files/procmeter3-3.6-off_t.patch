@@ -1,5 +1,5 @@
---- modules/longrun.c      2010-12-24 05:40:47.000000000 -0500
-+++ modules/longrun.c   2019-12-14 15:34:55.292299114 -0500
+--- procmeter3-3.6/modules/longrun.c      2010-12-24 05:40:47.000000000 -0500
++++ procmeter3-3.6/modules/longrun.c   2019-12-14 15:34:55.292299114 -0500
 @@ -36,11 +36,11 @@
  #define CPUID_TMx86_PROCESSOR_INFO 0x80860001
  #define CPUID_TMx86_FEATURE_LONGRUN(x) ((x) & 0x02)
