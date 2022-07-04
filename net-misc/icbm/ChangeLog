@@ -2,7 +2,10 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-  07Jul 2022: Phil Stracchino <phils@caerllewys.net> icbm-1.5.2.ebuild
+  04Jul 2022: Phil Stracchino <phils@caerllewys.net> icbm-1.5.2-r1.ebuild
+  Remove dev-perl/Net-ICB from dependency list
+
+  03Jul 2022: Phil Stracchino <phils@caerllewys.net> icbm-1.5.2.ebuild
   Package ICB.pm now repackaged with icbm since dev-perl/Net-ICB is long
   defunct as a package.  It is installed in /usr/share/ic/Net.
   Update ebuild to EAPI=7
