@@ -40,7 +40,7 @@ src_compile () {
 }
 
 src_install () {
-	dobin icbm primegen ICB.pm
+	dobin icbm primegen
 	dodoc README.ICBM README.ENCRYPTION TODO BUGS Changelog
 	doman icbm.1
 	dodir /usr/share/icb
