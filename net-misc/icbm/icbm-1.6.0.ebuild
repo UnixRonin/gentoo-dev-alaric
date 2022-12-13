@@ -18,7 +18,6 @@ RESTRICT="mirror"
 RDEPEND="
 	>=dev-lang/perl-5.6.0[ithreads]
 	dev-perl/Curses
-	dev-perl/Net-ICB
 	dev-perl/TermReadKey
 	encryption? (
 		dev-perl/Crypt-DH-GMP
@@ -41,7 +40,7 @@ src_compile () {
 }
 
 src_install () {
-	dobin icbm primegen ICB.pm
+	dobin icbm primegen
 	dodoc README.ICBM README.ENCRYPTION TODO BUGS Changelog
 	doman icbm.1
 	dodir /usr/share/icb
