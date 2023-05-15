@@ -1,0 +1,38 @@
+--- procmeter3-3.6/module.c	2011-01-08 06:14:30.000000000 -0500
++++ procmeter3-3.6/module.c	2023-03-13 13:39:53.306436001 -0400
+@@ -168,10 +168,11 @@
+ {
+  ProcMeterModule *(*Load)(void);
+  ProcMeterOutput **(*Initialise)(char *),**outputs,*output;
+  Module new=NULL;
+  int noutputs,i,m,c;
++ char* moduleOptions;
+ 
+  new=(Module)malloc(sizeof(struct _Module));
+ 
+  new->filename=(char*)malloc(strlen(filename)+1);
+  strcpy(new->filename,filename);
+@@ -206,10 +207,23 @@
+     free(new->filename);
+     free(new);
+     return(NULL);
+    }
+ 
++   moduleOptions = GetProcMeterRC(new->module->name,"options");
++   
++   if (moduleOptions != NULL)
++   {
++        if (!strncmp(moduleOptions, "disable", 6))
++        {
++            dlclose(new->dlhandle);
++            free(new->filename);
++            free(new);
++            return(NULL);
++        }      
++   }
++
+  for(m=-1,i=0;Modules[i];i++)
+     if(!(c=strcmp(Modules[i]->module->name,new->module->name)))
+       {
+        fprintf(stderr,"ProcMeter: Duplicate module name '%s' ignoring '%s'.\n",new->module->name,new->filename);
+        dlclose(new->dlhandle);

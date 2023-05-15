@@ -30,6 +30,8 @@ PATCHES=(
 	"${FILESDIR}"/${P}-off_t.patch
 	"${FILESDIR}"/${P}-diskusage.patch
 	"${FILESDIR}"/${P}-stat-disk-sysmacros.patch
+	"${FILESDIR}"/${P}-libsensors-version-check.patch
+	"${FILESDIR}"/${P}-module-disable-option.patch
 )
 
 
