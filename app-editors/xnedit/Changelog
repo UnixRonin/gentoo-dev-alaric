@@ -2,6 +2,12 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*xnedit-1.5.0-r1 (30 AUG 2023)
+  30 AUG 2023: Phil Stracchino <phils@caerllewys.net>:
+  Undo the rename of xnc to xneditc (which was needed in app-editors/nedit
+    because /usr/bin/nc would have collided with netcat)
+  Fixed the 'doc' USE flag
+
 *xnedit-1.5.0 (9 JULY 2023)
   9 JULY 2023: Phil Stracchino <phils@caerllewys.net>:
   Upstream update to 1.5.0
