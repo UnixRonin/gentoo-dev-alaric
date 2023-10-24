@@ -2,6 +2,9 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  24Oct 2023: Phil Stracchino <phils@caerllewys.net> icbm-1.6.0.1.ebuild
+  Minor fix to url grabber to autocorrect htts:// to https://
+
   13Dec 2022: Phil Stracchino <phils@caerllewys.net> icbm-1.6.0.ebuild
   Adds timestamp bracket (starttime/endtime) option to /replay command
 
