@@ -2,6 +2,9 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31Oct 2023: Phil Stracchino <phils@caerllewys.net> icbm-1.6.0.2.ebuild
+  Minor fix to minor fix to url grabber ...
+
   24Oct 2023: Phil Stracchino <phils@caerllewys.net> icbm-1.6.0.1.ebuild
   Minor fix to url grabber to autocorrect htts:// to https://
 
