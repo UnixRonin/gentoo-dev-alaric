@@ -21,6 +21,7 @@ RDEPEND="
 	dev-perl/DBI
 	dev-perl/MP3-Info
 	dev-perl/MP3-Tag
+    dev-perl/Ogg-Vorbis-Header
 	dev-perl/Tk-MListbox
 	virtual/mysql
 	"
@@ -38,7 +39,7 @@ src_compile () {
 
 src_install () {
 	dobin perljammer remotejammer
-	dobin id3fix id3read id3write id3sort
+	dobin id3fix id3read id3write id3sort oggread oggwrite
 	dobin mp3insert pjam-dbtool pjam-import pjam-insert pjam-remote
 	dodoc schema
 	doman *.1
