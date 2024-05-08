@@ -29,7 +29,7 @@ RDEPEND="
 	"
 DEPEND="${RDEPEND}"
 
-S="${WORKDIR}/perljammer-${PVR}"
+S="${WORKDIR}/perljammer-${P/PV}"
 
 src_configure () {
 	true;
