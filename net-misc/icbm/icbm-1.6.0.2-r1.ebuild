@@ -17,7 +17,7 @@ RESTRICT="mirror"
 
 RDEPEND="
 	|| ( >=dev-lang/perl-5.6.0[ithreads]
-         >=dev-lang/perl-5.6.0[perl_features_ithreads]
+         >=dev-lang/perl-5.38.2[perl_features_ithreads]
     )
 	dev-perl/Curses
 	dev-perl/TermReadKey
