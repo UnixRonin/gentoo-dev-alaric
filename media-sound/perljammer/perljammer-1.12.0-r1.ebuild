@@ -2,8 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
-
+EAPI=8
 
 DESCRIPTION="A SQL-backed Perl/Tk music jukebox"
 HOMEPAGE="http://co.ordinate.org/perljammer/"
