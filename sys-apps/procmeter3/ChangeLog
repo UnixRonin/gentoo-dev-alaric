@@ -2,7 +2,11 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-*procmeter3-3.6-r5 (15 JUMAY 2023)
+*procmeter3-3.6-r6 (8 JUN 2024)
+  8 JUN 2024; Phil Stracchino <phils@caerllewys.net>:
+  Update EAPI
+
+*procmeter3-3.6-r5 (15 MAY 2023)
   15 MAY 2023; Phil Stracchino <phils@caerllewys.net>:
   Patch to libsensors version check
   Patch to add 'disable' option to skip loading an unwanted module altogether

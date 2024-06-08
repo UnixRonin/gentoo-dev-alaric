@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=6
+EAPI=8
 
-inherit eutils flag-o-matic toolchain-funcs
+inherit flag-o-matic toolchain-funcs
 
 DESCRIPTION="Fast, flexible, modular system monitoring tool for Unix and the X Window System"
 HOMEPAGE="https://www.gedanken.org.uk/software/procmeter3/"
