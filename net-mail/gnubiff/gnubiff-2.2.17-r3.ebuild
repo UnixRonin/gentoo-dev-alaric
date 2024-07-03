@@ -30,12 +30,12 @@ DEPEND="${RDEPEND}
 DOCS="AUTHORS ChangeLog NEWS README THANKS TODO"
 
 src_prepare() {
-	eautoreconf
 	eapply -p0 "${FILESDIR}/${PN}-2.2.15-fix-nls.patch"
 	eapply -p1 "${FILESDIR}/${PN}-2.2.15-gold.patch"
 	eapply -p0 "${FILESDIR}/${PN}-2.2.15-underlink.patch"
 	eapply "${FILESDIR}/${PN}-2.2.17-clang.patch"
 	eapply_user
+	eautoreconf
 }
 
 src_configure() {
