@@ -1,7 +1,7 @@
 # Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 inherit desktop toolchain-funcs
 
@@ -23,7 +23,7 @@ DEPEND="${RDEPEND}
 	|| ( dev-util/yacc sys-devel/bison )
 	dev-lang/perl"
 
-S="${WORKDIR}/${PN}"
+S="${WORKDIR}/${P}"
 
 PATCHES=(
 	  "${FILESDIR}/${P}-doc.patch"
