@@ -1,0 +1,17 @@
+--- a/doc/Makefile	2023-08-30 15:31:10.589381998 -0400
++++ b/doc/Makefile	2023-08-30 15:31:27.361566094 -0400
+@@ -46,12 +46,12 @@
+ help: ../source/help_topic.h ../source/help_data.h setext
+ 
+ ../source/help_topic.h ../source/help_data.h: .version help.etx setext
+ 	@ echo "Creating XNEdit help code `cat .version`"
+ 	@ ./setext -m -v version="`cat .version`" help.etx
+-	@ mv -f help_topic.h ../source
+-	@ mv -f help_data.h ../source
++	@ cp -f ../source/help_topic.h .
++	@ cp -f ../source/help_data.h .
+ 	@ if [ ! -z "$(VERSION)" ]; then \
+ 		echo "#define XNEDIT_IS_RELEASE" >> ../source/help_data.h ; \
+ 	  fi
+ 
+ xnedit.html: .version help.etx setext
