@@ -48,7 +48,7 @@ src_install() {
 	dobin source/xnc
 
 	make_desktop_entry "${PN}"
-	doicon "${WORKDIR}/${PN}/resources/desktop/${PN}.png"
+	doicon "${WORKDIR}/${P}/resources/desktop/${PN}.png"
 
 	if use doc; then
 		newman doc/xnedit.man xnedit.1
